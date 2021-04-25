@@ -1,0 +1,9 @@
+C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\bin\Debug\Universe_invaders.exe.config
+C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\bin\Debug\Universe_invaders.exe
+C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\bin\Debug\Universe_invaders.pdb
+C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\obj\Debug\Universe-invaders.csprojAssemblyReference.cache
+C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\obj\Debug\Universe_invaders.Properties.Resources.resources
+C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\obj\Debug\Universe-invaders.csproj.GenerateResource.cache
+C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\obj\Debug\Universe-invaders.csproj.CoreCompileInputs.cache
+C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\obj\Debug\Universe_invaders.exe
+C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\obj\Debug\Universe_invaders.pdb
