@@ -23,15 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0a8798e-6a40-46e8-a104-308bc02e36c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Universe-invaders/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/MenuForm.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Universe-invaders/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/MenuForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Universe-invaders/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Universe-invaders/Universe-invaders.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/Universe-invaders.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universe-invaders/MenuForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/MenuForm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe-invaders.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe-invaders.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe_invaders.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe_invaders.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe_invaders.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe_invaders.pdb" afterDir="false" />
     </list>
@@ -90,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1619349409689</updated>
-      <workItem from="1619349472541" duration="1993000" />
+      <workItem from="1619349472541" duration="3191000" />
     </task>
     <servers />
   </component>
@@ -109,21 +104,21 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1619351548725">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1619352724448">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619351548725" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1619351548725">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619352724448" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1619352724447">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619351548725" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1619351548725">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619352724447" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1619352724447">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619351548725" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1619351548725">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619352724447" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1619352724447">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619351548725" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619352724447" />
   </component>
 </project>
