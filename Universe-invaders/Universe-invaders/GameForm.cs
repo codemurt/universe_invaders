@@ -33,6 +33,16 @@ namespace Universe_invaders
 
             Controls.Add(buttonToMenu.button);
             Controls.Add(buttonToAchievements.button);
+            
+            var currentPlayer = new Player();
+            var money = new Label();
+            money.Text = "Money: " + currentPlayer.Money.ToString() + " $";
+            money.Size = new Size(200, 100);
+            money.Location = new Point(50, 50);
+            money.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
+            money.ForeColor = Color.Teal;
+            Controls.Add(money);
+            
         }
     }
 }

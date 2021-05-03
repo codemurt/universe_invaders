@@ -23,10 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0a8798e-6a40-46e8-a104-308bc02e36c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Universe-invaders/GameButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Universe-invaders/GameForm.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Universe-invaders/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universe-invaders/GameButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/GameButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universe-invaders/GameForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/GameForm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/MenuForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/MenuForm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/Universe-invaders.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/Universe-invaders.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.exe" afterDir="false" />
@@ -46,14 +47,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Universe-invaders/GameForm.cs" />
         <option value="$PROJECT_DIR$/Universe-invaders/MenuForm.cs" />
         <option value="$PROJECT_DIR$/Universe-invaders/GameButton.cs" />
+        <option value="$PROJECT_DIR$/Universe-invaders/Player.cs" />
+        <option value="$PROJECT_DIR$/Universe-invaders/GameForm.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1revWI7oYvcS55f5vZHBZzOQeJr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -94,7 +98,7 @@
       <updated>1619349409689</updated>
       <workItem from="1619349472541" duration="3450000" />
       <workItem from="1619358540681" duration="3758000" />
-      <workItem from="1620039238801" duration="3189000" />
+      <workItem from="1620039238801" duration="4228000" />
     </task>
     <servers />
   </component>
@@ -114,21 +118,21 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1620042023974">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1620042851398">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620042023974" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1620042023964">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620042851398" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1620042851398">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620042023964" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1620042023964">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620042851398" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1620042851398">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620042023964" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1620042023974">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620042851398" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1620042851398">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620042023974" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620042851398" />
   </component>
 </project>

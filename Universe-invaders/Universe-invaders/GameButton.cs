@@ -34,6 +34,7 @@ namespace Universe_invaders
             {
                 button.BackColor = colorGreen;
             };
+            button.TabStop = false;
         }
     }
 }

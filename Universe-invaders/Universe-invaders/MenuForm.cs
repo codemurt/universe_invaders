@@ -39,7 +39,7 @@ namespace Universe_invaders
                 gameForm.Show();
                 this.Hide();
             };
-            
+
             var buttonExit = new GameButton();
             buttonExit.button.Text = "exit";
             buttonExit.button.Location = new Point(ClientSize.Width / 2 - 175, buttonStart.button.Bottom + 10);
