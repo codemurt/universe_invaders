@@ -24,8 +24,7 @@ namespace Universe_invaders
                 this.Close();
             };
             buttonToMenu.button.Font = new Font("PlayMeGames", 45, FontStyle.Italic);
-            
-            
+
             var buttonToAchievements = new GameButton();
             buttonToAchievements.button.Text = "achievements";
             buttonToAchievements.button.Location = new Point(ClientSize.Width - 375 - 355, ClientSize.Height - 55);
@@ -43,6 +42,21 @@ namespace Universe_invaders
             money.ForeColor = Color.Teal;
             Controls.Add(money);
             
+            var damageClick = new Label();
+            damageClick.Text = "Damage Per Click: " + currentPlayer.DamageClick.ToString() + " p.";
+            damageClick.Size = new Size(350, 100);
+            damageClick.Location = new Point(ClientSize.Width / 2 - 200, 50);
+            damageClick.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
+            damageClick.ForeColor = Color.Teal;
+            Controls.Add(damageClick);
+            
+            var autoDamage = new Label();
+            autoDamage.Text = "Auto Damage: " + currentPlayer.AutoDamage.ToString() + " p/sec.";
+            autoDamage.Size = new Size(350, 100);
+            autoDamage.Location = new Point(ClientSize.Width - 355, 50);
+            autoDamage.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
+            autoDamage.ForeColor = Color.Teal;
+            Controls.Add(autoDamage);
         }
     }
 }
