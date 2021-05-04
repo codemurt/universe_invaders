@@ -23,10 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0a8798e-6a40-46e8-a104-308bc02e36c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Universe-invaders/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universe-invaders/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/GameForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/GameForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Universe-invaders/MenuForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/MenuForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Universe-invaders/Universe-invaders.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/Universe-invaders.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universe-invaders/GameUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/GameUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe-invaders.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe-invaders.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe_invaders.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe_invaders.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe_invaders.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe_invaders.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,14 +41,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F37459E-F130-4442-BA19-EE268C49D074/a4/ad63ac3f/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Universe-invaders/GameButton.cs" />
         <option value="$PROJECT_DIR$/Universe-invaders/Player.cs" />
+        <option value="$PROJECT_DIR$/Universe-invaders/MenuForm.cs" />
         <option value="$PROJECT_DIR$/Universe-invaders/GameUpgrade.cs" />
         <option value="$PROJECT_DIR$/Universe-invaders/Game.cs" />
-        <option value="$PROJECT_DIR$/Universe-invaders/MenuForm.cs" />
         <option value="$PROJECT_DIR$/Universe-invaders/GameForm.cs" />
       </list>
     </option>
@@ -58,6 +66,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3498452" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.3003096" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
@@ -93,7 +103,7 @@
       <workItem from="1619349472541" duration="3450000" />
       <workItem from="1619358540681" duration="3758000" />
       <workItem from="1620039238801" duration="5059000" />
-      <workItem from="1620124057041" duration="4542000" />
+      <workItem from="1620124057041" duration="5627000" />
     </task>
     <servers />
   </component>
@@ -113,21 +123,85 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1620128206161">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1620129658543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620128206161" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1620128206161">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620129658543" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1620129658543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620128206161" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1620128206161">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620129658543" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1620129658543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620128206161" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1620128206161">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620129658543" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1620129658543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620128206161" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620129658543" />
+    <state width="1323" height="250" key="GridCell.Tab.1.bottom" timestamp="1620129302367">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620129302367" />
+    <state width="1323" height="250" key="GridCell.Tab.1.center" timestamp="1620129302366">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1620129302366" />
+    <state width="1323" height="250" key="GridCell.Tab.1.left" timestamp="1620129302366">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1620129302366" />
+    <state width="1323" height="250" key="GridCell.Tab.1.right" timestamp="1620129302366">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1620129302366" />
+    <state width="1323" height="250" key="GridCell.Tab.2.bottom" timestamp="1620129302370">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620129302370" />
+    <state width="1323" height="250" key="GridCell.Tab.2.center" timestamp="1620129302367">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1620129302367" />
+    <state width="1323" height="250" key="GridCell.Tab.2.left" timestamp="1620129302367">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1620129302367" />
+    <state width="1323" height="250" key="GridCell.Tab.2.right" timestamp="1620129302367">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1620129302367" />
+    <state width="1323" height="250" key="GridCell.Tab.3.bottom" timestamp="1620129302371">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620129302371" />
+    <state width="1323" height="250" key="GridCell.Tab.3.center" timestamp="1620129302370">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1620129302370" />
+    <state width="1323" height="250" key="GridCell.Tab.3.left" timestamp="1620129302370">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1620129302370" />
+    <state width="1323" height="250" key="GridCell.Tab.3.right" timestamp="1620129302370">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1620129302370" />
+    <state width="1323" height="250" key="GridCell.Tab.4.bottom" timestamp="1620129302372">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.4.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620129302372" />
+    <state width="1323" height="250" key="GridCell.Tab.4.center" timestamp="1620129302371">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.4.center/0.0.1366.728@0.0.1366.728" timestamp="1620129302371" />
+    <state width="1323" height="250" key="GridCell.Tab.4.left" timestamp="1620129302371">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.4.left/0.0.1366.728@0.0.1366.728" timestamp="1620129302371" />
+    <state width="1323" height="250" key="GridCell.Tab.4.right" timestamp="1620129302371">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="250" key="GridCell.Tab.4.right/0.0.1366.728@0.0.1366.728" timestamp="1620129302371" />
   </component>
 </project>

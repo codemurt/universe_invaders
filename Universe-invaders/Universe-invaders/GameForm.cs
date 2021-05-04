@@ -67,14 +67,20 @@ namespace Universe_invaders
             
             var titleFirstUpgrade = new Label();
             titleFirstUpgrade.Text = "Simple\nsoldier";
-            titleFirstUpgrade.Size = new Size(200, 70);
+            titleFirstUpgrade.Size = new Size(100, 70);
             titleFirstUpgrade.Location = new Point(165, 130);
             titleFirstUpgrade.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             titleFirstUpgrade.ForeColor = Color.Teal;
             Controls.Add(titleFirstUpgrade);
             
+            var countFirstUpgrade = new Label();
+            countFirstUpgrade.Text = game.GameUpgrades[0].CountUpgrades.ToString() + "x";
+            countFirstUpgrade.Size = new Size(75, 70);
+            countFirstUpgrade.Location = new Point(270, 150);
+            countFirstUpgrade.Font = titleFirstUpgrade.Font;
+            countFirstUpgrade.ForeColor = Color.Teal;
+            Controls.Add(countFirstUpgrade);
             
-
 
         }
 
