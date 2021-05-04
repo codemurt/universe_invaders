@@ -56,6 +56,24 @@ namespace Universe_invaders
             autoDamage.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             autoDamage.ForeColor = Color.Teal;
             Controls.Add(autoDamage);
+            
+            var picturePurpleSoldier = new PictureBox();
+            picturePurpleSoldier.Image = Image.FromFile
+                (@"C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\Images\PurpleSoldier.png");
+            picturePurpleSoldier.SizeMode = PictureBoxSizeMode.StretchImage;
+            picturePurpleSoldier.Location = new Point(70, 120);
+            picturePurpleSoldier.Size = new Size(90, 88);
+            Controls.Add(picturePurpleSoldier);
+            
+            var titleFirstUpgrade = new Label();
+            titleFirstUpgrade.Text = "Simple\nsoldier";
+            titleFirstUpgrade.Size = new Size(200, 70);
+            titleFirstUpgrade.Location = new Point(165, 130);
+            titleFirstUpgrade.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
+            titleFirstUpgrade.ForeColor = Color.Teal;
+            Controls.Add(titleFirstUpgrade);
+
+
         }
 
         protected override void OnPaint(PaintEventArgs e)

@@ -6,5 +6,6 @@
         public int CountUpgrades;
         public int IncreaseClickDamage;
         public int IncreaseAutoDamage;
+        public string Name;
     }
 }
