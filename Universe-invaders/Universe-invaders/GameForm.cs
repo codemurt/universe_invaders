@@ -5,7 +5,7 @@ namespace Universe_invaders
 {
     public partial class GameForm : Form
     {
-        public GameForm(Player player)
+        public GameForm(Game game)
         {
             InitializeComponent();
             TopMost = true;
@@ -34,7 +34,7 @@ namespace Universe_invaders
             Controls.Add(buttonToAchievements.button);
             
             var money = new Label();
-            money.Text = "Money: " + player.Money.ToString() + " $";
+            money.Text = "Money: " + game.Player.Money.ToString() + " $";
             money.Size = new Size(200, 30);
             money.Location = new Point(50, 50);
             money.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
@@ -42,7 +42,7 @@ namespace Universe_invaders
             Controls.Add(money);
             
             var damageClick = new Label();
-            damageClick.Text = "Damage Per Click: " + player.DamageClick.ToString() + " p.";
+            damageClick.Text = "Damage Per Click: " + game.Player.DamageClick.ToString() + " p.";
             damageClick.Size = new Size(350, 30);
             damageClick.Location = new Point(ClientSize.Width / 2 - 200, 50);
             damageClick.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
@@ -50,7 +50,7 @@ namespace Universe_invaders
             Controls.Add(damageClick);
             
             var autoDamage = new Label();
-            autoDamage.Text = "Auto Damage: " + player.AutoDamage.ToString() + " p/sec.";
+            autoDamage.Text = "Auto Damage: " + game.Player.AutoDamage.ToString() + " p/sec.";
             autoDamage.Size = new Size(350, 30);
             autoDamage.Location = new Point(ClientSize.Width - 355, 50);
             autoDamage.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
@@ -72,6 +72,8 @@ namespace Universe_invaders
             titleFirstUpgrade.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             titleFirstUpgrade.ForeColor = Color.Teal;
             Controls.Add(titleFirstUpgrade);
+            
+            
 
 
         }
