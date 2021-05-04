@@ -5,7 +5,7 @@ namespace Universe_invaders
 {
     public partial class GameForm : Form
     {
-        public GameForm()
+        public GameForm(Player player)
         {
             InitializeComponent();
             TopMost = true;
@@ -33,30 +33,40 @@ namespace Universe_invaders
             Controls.Add(buttonToMenu.button);
             Controls.Add(buttonToAchievements.button);
             
-            var currentPlayer = new Player();
             var money = new Label();
-            money.Text = "Money: " + currentPlayer.Money.ToString() + " $";
-            money.Size = new Size(200, 100);
+            money.Text = "Money: " + player.Money.ToString() + " $";
+            money.Size = new Size(200, 30);
             money.Location = new Point(50, 50);
             money.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             money.ForeColor = Color.Teal;
             Controls.Add(money);
             
             var damageClick = new Label();
-            damageClick.Text = "Damage Per Click: " + currentPlayer.DamageClick.ToString() + " p.";
-            damageClick.Size = new Size(350, 100);
+            damageClick.Text = "Damage Per Click: " + player.DamageClick.ToString() + " p.";
+            damageClick.Size = new Size(350, 30);
             damageClick.Location = new Point(ClientSize.Width / 2 - 200, 50);
             damageClick.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             damageClick.ForeColor = Color.Teal;
             Controls.Add(damageClick);
             
             var autoDamage = new Label();
-            autoDamage.Text = "Auto Damage: " + currentPlayer.AutoDamage.ToString() + " p/sec.";
-            autoDamage.Size = new Size(350, 100);
+            autoDamage.Text = "Auto Damage: " + player.AutoDamage.ToString() + " p/sec.";
+            autoDamage.Size = new Size(350, 30);
             autoDamage.Location = new Point(ClientSize.Width - 355, 50);
             autoDamage.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             autoDamage.ForeColor = Color.Teal;
             Controls.Add(autoDamage);
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            var graphics = e.Graphics;
+            graphics.DrawRectangle(new Pen(Color.Teal, 10), 50, 100, 535, 565);
+            graphics.DrawRectangle(new Pen(Color.Teal, 6), 60, 112, 515, 100);
+            graphics.DrawRectangle(new Pen(Color.Teal, 6), 60, 222, 515, 100);
+            graphics.DrawRectangle(new Pen(Color.Teal, 6), 60, 332, 515, 100);
+            graphics.DrawRectangle(new Pen(Color.Teal, 6), 60, 442, 515, 100);
+            graphics.DrawRectangle(new Pen(Color.Teal, 6), 60, 552, 515, 100);
         }
     }
 }

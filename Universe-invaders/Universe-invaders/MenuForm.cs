@@ -21,6 +21,8 @@ namespace Universe_invaders
             WindowState = FormWindowState.Maximized;
 
             ClientSize = Screen.FromControl(this).WorkingArea.Size;
+            
+            var player = new Player();
 
             var menuTitle = new Label();
             menuTitle.Text = "UNIVERSE\nINVADERS";
@@ -35,7 +37,7 @@ namespace Universe_invaders
             buttonStart.button.Font = new Font("PlayMeGames", 45, FontStyle.Italic);
             buttonStart.button.Click += (s, e) =>
             {
-                var gameForm = new GameForm();
+                var gameForm = new GameForm(player);
                 gameForm.Show();
                 this.Hide();
             };
