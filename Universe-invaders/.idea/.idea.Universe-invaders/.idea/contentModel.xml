@@ -13,6 +13,7 @@
         <e p="GameUpgrade.cs" t="Include" />
         <e p="MenuForm.cs" t="Include" />
         <e p="MenuForm.Designer.cs" t="Include" />
+        <e p="Monster.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Player.cs" t="Include" />
         <e p="Program.cs" t="Include" />

@@ -7,6 +7,7 @@ namespace Universe_invaders
         public Player Player;
         public List<GameUpgrade> GameUpgrades;
         public int CurrentLevel;
+        public Monster CurrentMonster;
 
         public Game()
         {
@@ -19,6 +20,8 @@ namespace Universe_invaders
             GameUpgrades.Add(new GameUpgrade("Space explorers", 1000, 500, 850));
 
             CurrentLevel = 1;
+            
+            CurrentMonster = new Monster("OrangeMonster", 20);
 
         }
     }

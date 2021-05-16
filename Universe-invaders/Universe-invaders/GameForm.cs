@@ -56,7 +56,7 @@ namespace Universe_invaders
             autoDamage.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             autoDamage.ForeColor = Color.Teal;
             Controls.Add(autoDamage);
-            
+
             var picturePurpleSoldier = new PictureBox();
             picturePurpleSoldier.Image = Image.FromFile
                 (@"C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\Images\PurpleSoldier.png");
@@ -209,6 +209,22 @@ namespace Universe_invaders
             titleCurrentLevel.Font = new Font("PlayMeGames", 40, FontStyle.Italic);
             titleCurrentLevel.ForeColor = Color.Teal;
             Controls.Add(titleCurrentLevel);
+            
+            var pictureMonster = new PictureBox();
+            pictureMonster.Image = Image.FromFile
+                ("C:\\Programming\\git\\universe-invaders\\Universe-invaders\\Universe-invaders\\Images\\" + game.CurrentMonster.Name + ".gif");
+            pictureMonster.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureMonster.Location = new Point(ClientSize.Width - 550, titleCurrentLevel.Bottom);
+            pictureMonster.Size = new Size(270, 350);
+            Controls.Add(pictureMonster);
+            
+            var progressBarMonsterHealth = new ProgressBar();
+            progressBarMonsterHealth.Size = new Size(400, 40);
+            progressBarMonsterHealth.Location = new Point(ClientSize.Width - 620, pictureMonster.Bottom + 20);
+            progressBarMonsterHealth.Minimum = 0;
+            progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
+            progressBarMonsterHealth.Value = game.CurrentMonster.Health;
+            Controls.Add(progressBarMonsterHealth);
         }
 
         protected override void OnPaint(PaintEventArgs e)
