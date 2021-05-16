@@ -61,7 +61,7 @@ namespace Universe_invaders
             picturePurpleSoldier.Image = Image.FromFile
                 (@"C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\Images\PurpleSoldier.png");
             picturePurpleSoldier.SizeMode = PictureBoxSizeMode.StretchImage;
-            picturePurpleSoldier.Location = new Point(70, 120);
+            picturePurpleSoldier.Location = new Point(70, 120); // y + 110
             picturePurpleSoldier.Size = new Size(90, 88);
             Controls.Add(picturePurpleSoldier);
             
@@ -76,15 +76,44 @@ namespace Universe_invaders
             var countFirstUpgrade = new Label();
             countFirstUpgrade.Text = game.GameUpgrades[0].CountUpgrades.ToString() + "x";
             countFirstUpgrade.Size = new Size(50, 30);
-            countFirstUpgrade.Location = new Point(270, 150);
+            countFirstUpgrade.Location = new Point(295, 150);
             countFirstUpgrade.Font = titleFirstUpgrade.Font;
             countFirstUpgrade.ForeColor = Color.Teal;
             Controls.Add(countFirstUpgrade);
             
             var buttonFirstUpgrade = new UpgradeButton();
             buttonFirstUpgrade.button.Text = game.GameUpgrades[0].Price + "$";
-            buttonFirstUpgrade.button.Location = new Point(325, 120);
+            buttonFirstUpgrade.button.Location = new Point(350, 120);
             Controls.Add(buttonFirstUpgrade.button);
+            
+            var pictureTheRifleman = new PictureBox();
+            pictureTheRifleman.Image = Image.FromFile
+                (@"C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\Images\TheRifleman.png");
+            pictureTheRifleman.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureTheRifleman.Location = new Point(70, 230);
+            pictureTheRifleman.Size = new Size(90, 88);
+            Controls.Add(pictureTheRifleman);
+            
+            var titleSecondUpgrade = new Label();
+            titleSecondUpgrade.Text = "The\nRifleman";
+            titleSecondUpgrade.Size = new Size(130, 65);
+            titleSecondUpgrade.Location = new Point(170, 250);
+            titleSecondUpgrade.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
+            titleSecondUpgrade.ForeColor = Color.Teal;
+            Controls.Add(titleSecondUpgrade);
+
+            var countSecondUpgrade = new Label();
+            countSecondUpgrade.Text = game.GameUpgrades[1].CountUpgrades + "x";
+            countSecondUpgrade.Size = new Size(50, 30);
+            countSecondUpgrade.Location = new Point(295, 260);
+            countSecondUpgrade.Font = titleFirstUpgrade.Font;
+            countSecondUpgrade.ForeColor = Color.Teal;
+            Controls.Add(countSecondUpgrade);
+            
+            var buttonSecondUpgrade = new UpgradeButton();
+            buttonSecondUpgrade.button.Text = game.GameUpgrades[1].Price + "$";
+            buttonSecondUpgrade.button.Location = new Point(350, 230);
+            Controls.Add(buttonSecondUpgrade.button);
         }
 
         protected override void OnPaint(PaintEventArgs e)

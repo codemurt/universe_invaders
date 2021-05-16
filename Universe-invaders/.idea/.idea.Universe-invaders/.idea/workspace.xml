@@ -23,14 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0a8798e-6a40-46e8-a104-308bc02e36c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Universe-invaders/UpgradeButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Universe-invaders/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universe-invaders/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/GameForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/GameForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Universe-invaders/Universe-invaders.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/Universe-invaders.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Universe-invaders/UpgradeButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/UpgradeButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/bin/Debug/Universe_invaders.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe-invaders.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe-invaders.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe_invaders.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe_invaders.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe_invaders.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Universe-invaders/obj/Debug/Universe_invaders.pdb" afterDir="false" />
     </list>
@@ -106,7 +104,7 @@
       <workItem from="1619358540681" duration="3758000" />
       <workItem from="1620039238801" duration="5059000" />
       <workItem from="1620124057041" duration="5842000" />
-      <workItem from="1621175628055" duration="1826000" />
+      <workItem from="1621175628055" duration="3179000" />
     </task>
     <servers />
   </component>
@@ -126,22 +124,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1621177481978">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1621178829565">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1621177481978" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1621177481978">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1621178829565" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1621178829565">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1621177481978" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1621177481978">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1621178829565" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1621178829565">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1621177481978" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1621177481978">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1621178829565" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1621178829565">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1621177481978" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1621178829565" />
     <state width="1323" height="250" key="GridCell.Tab.1.bottom" timestamp="1620129958880">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

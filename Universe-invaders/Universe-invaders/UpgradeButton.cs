@@ -16,7 +16,7 @@ namespace Universe_invaders
             button.BackColor = colorBlue;
             button.FlatStyle = FlatStyle.Flat;
             button.FlatAppearance.BorderColor = Color.Teal;
-            button.Size = new Size(240, 85);
+            button.Size = new Size(215, 85);
             button.ForeColor = Color.Teal;
             button.FlatAppearance.MouseOverBackColor = button.BackColor;
             button.BackColorChanged +=

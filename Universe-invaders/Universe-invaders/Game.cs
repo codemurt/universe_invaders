@@ -12,6 +12,7 @@ namespace Universe_invaders
             this.Player = new Player();
             GameUpgrades = new List<GameUpgrade>();
             GameUpgrades.Add(new GameUpgrade("Simple Soldier", 5, 1, 0));
+            GameUpgrades.Add(new GameUpgrade("the Rifleman", 25, 10, 15));
         }
     }
 }
