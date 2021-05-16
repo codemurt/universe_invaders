@@ -24,6 +24,7 @@
           <e p="Settings.settings" t="Include" />
         </e>
         <e p="Universe-invaders.csproj" t="IncludeRecursive" />
+        <e p="UpgradeButton.cs" t="Include" />
       </e>
       <e p="Universe-invaders.sln" t="IncludeFlat" />
     </e>

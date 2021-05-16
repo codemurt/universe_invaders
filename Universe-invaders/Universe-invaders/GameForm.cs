@@ -67,7 +67,7 @@ namespace Universe_invaders
             
             var titleFirstUpgrade = new Label();
             titleFirstUpgrade.Text = "Simple\nsoldier";
-            titleFirstUpgrade.Size = new Size(100, 70);
+            titleFirstUpgrade.Size = new Size(110, 70);
             titleFirstUpgrade.Location = new Point(165, 130);
             titleFirstUpgrade.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             titleFirstUpgrade.ForeColor = Color.Teal;
@@ -75,13 +75,16 @@ namespace Universe_invaders
             
             var countFirstUpgrade = new Label();
             countFirstUpgrade.Text = game.GameUpgrades[0].CountUpgrades.ToString() + "x";
-            countFirstUpgrade.Size = new Size(75, 70);
+            countFirstUpgrade.Size = new Size(50, 30);
             countFirstUpgrade.Location = new Point(270, 150);
             countFirstUpgrade.Font = titleFirstUpgrade.Font;
             countFirstUpgrade.ForeColor = Color.Teal;
             Controls.Add(countFirstUpgrade);
             
-
+            var buttonFirstUpgrade = new UpgradeButton();
+            buttonFirstUpgrade.button.Text = game.GameUpgrades[0].Price + "$";
+            buttonFirstUpgrade.button.Location = new Point(325, 120);
+            Controls.Add(buttonFirstUpgrade.button);
         }
 
         protected override void OnPaint(PaintEventArgs e)
