@@ -201,6 +201,14 @@ namespace Universe_invaders
             buttonFifthUpgrade.button.Text = game.GameUpgrades[4].Price + "$";
             buttonFifthUpgrade.button.Location = new Point(350, 560);
             Controls.Add(buttonFifthUpgrade.button);
+            
+            var titleCurrentLevel = new Label();
+            titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
+            titleCurrentLevel.Size = new Size(200, 55);
+            titleCurrentLevel.Location = new Point(ClientSize.Width - 500, 100);
+            titleCurrentLevel.Font = new Font("PlayMeGames", 40, FontStyle.Italic);
+            titleCurrentLevel.ForeColor = Color.Teal;
+            Controls.Add(titleCurrentLevel);
         }
 
         protected override void OnPaint(PaintEventArgs e)
