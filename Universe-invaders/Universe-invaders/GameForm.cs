@@ -114,6 +114,64 @@ namespace Universe_invaders
             buttonSecondUpgrade.button.Text = game.GameUpgrades[1].Price + "$";
             buttonSecondUpgrade.button.Location = new Point(350, 230);
             Controls.Add(buttonSecondUpgrade.button);
+            
+            var pictureRobot = new PictureBox();
+            pictureRobot.Image = Image.FromFile
+                (@"C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\Images\Robot.png");
+            pictureRobot.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureRobot.Location = new Point(70, 340);
+            pictureRobot.Size = new Size(90, 88);
+            Controls.Add(pictureRobot);
+            
+            var titleThirdUpgrade = new Label();
+            titleThirdUpgrade.Text = "Robot";
+            titleThirdUpgrade.Size = new Size(120, 30);
+            titleThirdUpgrade.Location = new Point(170, 375);
+            titleThirdUpgrade.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
+            titleThirdUpgrade.ForeColor = Color.Teal;
+            Controls.Add(titleThirdUpgrade);
+            
+            var countThirdUpgrade = new Label();
+            countThirdUpgrade.Text = game.GameUpgrades[2].CountUpgrades + "x";
+            countThirdUpgrade.Size = new Size(50, 30);
+            countThirdUpgrade.Location = new Point(295, 380);
+            countThirdUpgrade.Font = titleFirstUpgrade.Font;
+            countThirdUpgrade.ForeColor = Color.Teal;
+            Controls.Add(countThirdUpgrade);
+            
+            var buttonThirdUpgrade = new UpgradeButton();
+            buttonThirdUpgrade.button.Text = game.GameUpgrades[2].Price + "$";
+            buttonThirdUpgrade.button.Location = new Point(350, 340);
+            Controls.Add(buttonThirdUpgrade.button);
+            
+            var pictureSpaceshipCrew = new PictureBox();
+            pictureSpaceshipCrew.Image = Image.FromFile
+                (@"C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\Images\SpaceshipCrew.png");
+            pictureSpaceshipCrew.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureSpaceshipCrew.Location = new Point(70, 450);
+            pictureSpaceshipCrew.Size = new Size(90, 88);
+            Controls.Add(pictureSpaceshipCrew);
+            
+            var titleFourthUpgrade = new Label();
+            titleFourthUpgrade.Text = "Spaceship\ncrew";
+            titleFourthUpgrade.Size = new Size(125, 55);
+            titleFourthUpgrade.Location = new Point(170, 475);
+            titleFourthUpgrade.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
+            titleFourthUpgrade.ForeColor = Color.Teal;
+            Controls.Add(titleFourthUpgrade);
+            
+            var countFourthUpgrade = new Label();
+            countFourthUpgrade.Text = game.GameUpgrades[3].CountUpgrades + "x";
+            countFourthUpgrade.Size = new Size(50, 30);
+            countFourthUpgrade.Location = new Point(295, 490);
+            countFourthUpgrade.Font = titleFirstUpgrade.Font;
+            countFourthUpgrade.ForeColor = Color.Teal;
+            Controls.Add(countFourthUpgrade);
+            
+            var buttonFourthUpgrade = new UpgradeButton();
+            buttonFourthUpgrade.button.Text = game.GameUpgrades[3].Price + "$";
+            buttonFourthUpgrade.button.Location = new Point(350, 450);
+            Controls.Add(buttonFourthUpgrade.button);
         }
 
         protected override void OnPaint(PaintEventArgs e)
