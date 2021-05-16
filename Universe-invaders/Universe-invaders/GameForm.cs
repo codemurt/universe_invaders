@@ -172,6 +172,35 @@ namespace Universe_invaders
             buttonFourthUpgrade.button.Text = game.GameUpgrades[3].Price + "$";
             buttonFourthUpgrade.button.Location = new Point(350, 450);
             Controls.Add(buttonFourthUpgrade.button);
+            
+            var pictureSpaceExplorers = new PictureBox();
+            pictureSpaceExplorers.Image = Image.FromFile
+                (@"C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\Images\SpaceExplorers.png");
+            pictureSpaceExplorers.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureSpaceExplorers.Location = new Point(70, 560);
+            pictureSpaceExplorers.Size = new Size(90, 88);
+            Controls.Add(pictureSpaceExplorers);
+            
+            var titleFifthUpgrade = new Label();
+            titleFifthUpgrade.Text = "Space\nexplorers";
+            titleFifthUpgrade.Size = new Size(125, 55);
+            titleFifthUpgrade.Location = new Point(170, 580);
+            titleFifthUpgrade.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
+            titleFifthUpgrade.ForeColor = Color.Teal;
+            Controls.Add(titleFifthUpgrade);
+            
+            var countFifthUpgrade = new Label();
+            countFifthUpgrade.Text = game.GameUpgrades[4].CountUpgrades + "x";
+            countFifthUpgrade.Size = new Size(50, 30);
+            countFifthUpgrade.Location = new Point(295, 590);
+            countFifthUpgrade.Font = titleFirstUpgrade.Font;
+            countFifthUpgrade.ForeColor = Color.Teal;
+            Controls.Add(countFifthUpgrade);
+            
+            var buttonFifthUpgrade = new UpgradeButton();
+            buttonFifthUpgrade.button.Text = game.GameUpgrades[4].Price + "$";
+            buttonFifthUpgrade.button.Location = new Point(350, 560);
+            Controls.Add(buttonFifthUpgrade.button);
         }
 
         protected override void OnPaint(PaintEventArgs e)

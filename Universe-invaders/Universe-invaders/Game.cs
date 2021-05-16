@@ -15,6 +15,7 @@ namespace Universe_invaders
             GameUpgrades.Add(new GameUpgrade("the Rifleman", 25, 10, 15));
             GameUpgrades.Add(new GameUpgrade("Robot", 100, 50, 75));
             GameUpgrades.Add(new GameUpgrade("Spaceship crew", 250, 150, 300));
+            GameUpgrades.Add(new GameUpgrade("Space explorers", 1000, 500, 850));
             
         }
     }
