@@ -2,8 +2,8 @@
 {
     public class Player
     {
-        public long Money = 0;
-        public long DamageClick = 1;
-        public long AutoDamage = 0;
+        public int Money = 0;
+        public int DamageClick = 1;
+        public int AutoDamage = 0;
     }
 }

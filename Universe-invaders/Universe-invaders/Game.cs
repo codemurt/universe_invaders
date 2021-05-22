@@ -8,6 +8,8 @@ namespace Universe_invaders
         public List<GameUpgrade> GameUpgrades;
         public int CurrentLevel;
         public Monster CurrentMonster;
+        public int HealthMin = 10;
+        public int MoneyWinMin = 2;
 
         public Game()
         {
@@ -21,7 +23,7 @@ namespace Universe_invaders
 
             CurrentLevel = 1;
             
-            CurrentMonster = new Monster("OrangeMonster", 20);
+            CurrentMonster = new Monster("OrangeMonster", 10, 2);
 
         }
     }

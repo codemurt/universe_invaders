@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using System.Drawing;
 
 namespace Universe_invaders
@@ -225,6 +226,25 @@ namespace Universe_invaders
             progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
             progressBarMonsterHealth.Value = game.CurrentMonster.Health;
             Controls.Add(progressBarMonsterHealth);
+            
+            pictureMonster.Click += (s, e) =>
+            {
+                if (game.CurrentMonster.Health - game.Player.DamageClick > 0)
+                    game.CurrentMonster.Health -= game.Player.DamageClick;
+                else
+                {
+                    game.Player.Money += game.CurrentMonster.MoneyWin;
+                    money.Text = "Money: " + game.Player.Money + " $";
+                    game.CurrentLevel++;
+                    titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
+                    game.HealthMin = Convert.ToInt32(game.HealthMin * 1.2);
+                    game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.5);
+                    game.CurrentMonster = new Monster("OrangeMonster", game.HealthMin, game.MoneyWinMin);
+                    progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
+                }
+
+                progressBarMonsterHealth.Value = game.CurrentMonster.Health;
+            };
         }
 
         protected override void OnPaint(PaintEventArgs e)
