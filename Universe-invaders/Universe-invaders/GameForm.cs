@@ -174,6 +174,22 @@ namespace Universe_invaders
             var buttonThirdUpgrade = new UpgradeButton();
             buttonThirdUpgrade.button.Text = game.GameUpgrades[2].Price + "$";
             buttonThirdUpgrade.button.Location = new Point(350, 340);
+            buttonThirdUpgrade.button.Click += (s, e) =>
+            {
+                if (game.Player.Money >= game.GameUpgrades[2].Price)
+                {
+                    game.Player.Money -= game.GameUpgrades[2].Price;
+                    ChangeMoneyStatus(money, game);
+                    game.Player.DamageClick += game.GameUpgrades[2].IncreaseClickDamage;
+                    ChangeDamageClick(damageClick, game);
+                    game.Player.AutoDamage += game.GameUpgrades[2].IncreaseAutoDamage;
+                    ChangeAutoDamage(autoDamage, game);
+                    game.GameUpgrades[2].CountUpgrades++;
+                    ChangeCountUpgrades(countThirdUpgrade, game, 2);
+                    game.GameUpgrades[2].Price += Convert.ToInt32(game.GameUpgrades[2].MainPrice * 1.1);
+                    ChangeUpgradePrice(buttonThirdUpgrade, game, 2);
+                }
+            };
             Controls.Add(buttonThirdUpgrade.button);
             
             var pictureSpaceshipCrew = new PictureBox();
@@ -203,6 +219,22 @@ namespace Universe_invaders
             var buttonFourthUpgrade = new UpgradeButton();
             buttonFourthUpgrade.button.Text = game.GameUpgrades[3].Price + "$";
             buttonFourthUpgrade.button.Location = new Point(350, 450);
+            buttonFourthUpgrade.button.Click += (s, e) =>
+            {
+                if (game.Player.Money >= game.GameUpgrades[3].Price)
+                {
+                    game.Player.Money -= game.GameUpgrades[3].Price;
+                    ChangeMoneyStatus(money, game);
+                    game.Player.DamageClick += game.GameUpgrades[3].IncreaseClickDamage;
+                    ChangeDamageClick(damageClick, game);
+                    game.Player.AutoDamage += game.GameUpgrades[3].IncreaseAutoDamage;
+                    ChangeAutoDamage(autoDamage, game);
+                    game.GameUpgrades[3].CountUpgrades++;
+                    ChangeCountUpgrades(countFourthUpgrade, game, 3);
+                    game.GameUpgrades[3].Price += Convert.ToInt32(game.GameUpgrades[3].MainPrice * 1.1);
+                    ChangeUpgradePrice(buttonFourthUpgrade, game, 3);
+                }
+            };
             Controls.Add(buttonFourthUpgrade.button);
             
             var pictureSpaceExplorers = new PictureBox();
@@ -232,11 +264,27 @@ namespace Universe_invaders
             var buttonFifthUpgrade = new UpgradeButton();
             buttonFifthUpgrade.button.Text = game.GameUpgrades[4].Price + "$";
             buttonFifthUpgrade.button.Location = new Point(350, 560);
+            buttonFifthUpgrade.button.Click += (s, e) =>
+            {
+                if (game.Player.Money >= game.GameUpgrades[4].Price)
+                {
+                    game.Player.Money -= game.GameUpgrades[4].Price;
+                    ChangeMoneyStatus(money, game);
+                    game.Player.DamageClick += game.GameUpgrades[4].IncreaseClickDamage;
+                    ChangeDamageClick(damageClick, game);
+                    game.Player.AutoDamage += game.GameUpgrades[4].IncreaseAutoDamage;
+                    ChangeAutoDamage(autoDamage, game);
+                    game.GameUpgrades[4].CountUpgrades++;
+                    ChangeCountUpgrades(countFifthUpgrade, game, 4);
+                    game.GameUpgrades[4].Price += Convert.ToInt32(game.GameUpgrades[4].MainPrice * 1.1);
+                    ChangeUpgradePrice(buttonFifthUpgrade, game, 4);
+                }
+            };
             Controls.Add(buttonFifthUpgrade.button);
             
             var titleCurrentLevel = new Label();
             titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
-            titleCurrentLevel.Size = new Size(210, 55);
+            titleCurrentLevel.Size = new Size(230, 55);
             titleCurrentLevel.Location = new Point(ClientSize.Width - 500, 100);
             titleCurrentLevel.Font = new Font("PlayMeGames", 40, FontStyle.Italic);
             titleCurrentLevel.ForeColor = Color.Teal;
@@ -276,6 +324,28 @@ namespace Universe_invaders
                 
                 progressBarMonsterHealth.Value = game.CurrentMonster.Health;
             };
+            
+            var timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += (s, e) =>
+            {
+                if (game.CurrentMonster.Health - game.Player.AutoDamage > 0)
+                    game.CurrentMonster.Health -= game.Player.AutoDamage;
+                else
+                {
+                    game.Player.Money += game.CurrentMonster.MoneyWin;
+                    money.Text = "Money: " + game.Player.Money + " $";
+                    game.CurrentLevel++;
+                    titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
+                    game.HealthMin = Convert.ToInt32(game.HealthMin * 1.2);
+                    game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
+                    game.CurrentMonster = new Monster("OrangeMonster", game.HealthMin, game.MoneyWinMin);
+                    progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
+                }
+                
+                progressBarMonsterHealth.Value = game.CurrentMonster.Health;
+            };
+            timer.Start();
         }
 
         protected override void OnPaint(PaintEventArgs e)

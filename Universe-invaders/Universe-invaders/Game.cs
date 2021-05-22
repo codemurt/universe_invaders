@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Universe_invaders
 {
@@ -10,6 +11,7 @@ namespace Universe_invaders
         public Monster CurrentMonster;
         public int HealthMin = 10;
         public int MoneyWinMin = 2;
+        public Timer timer;
 
         public Game()
         {
@@ -24,7 +26,6 @@ namespace Universe_invaders
             CurrentLevel = 1;
             
             CurrentMonster = new Monster("OrangeMonster", 10, 2);
-
         }
     }
 }
