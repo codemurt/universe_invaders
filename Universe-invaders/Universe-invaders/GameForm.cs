@@ -52,8 +52,8 @@ namespace Universe_invaders
             
             var autoDamage = new Label();
             autoDamage.Text = "Auto Damage: " + game.Player.AutoDamage.ToString() + " p/sec.";
-            autoDamage.Size = new Size(350, 30);
-            autoDamage.Location = new Point(ClientSize.Width - 355, 50);
+            autoDamage.Size = new Size(400, 30);
+            autoDamage.Location = new Point(ClientSize.Width - 400, 50);
             autoDamage.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             autoDamage.ForeColor = Color.Teal;
             Controls.Add(autoDamage);
@@ -68,16 +68,16 @@ namespace Universe_invaders
             
             var titleFirstUpgrade = new Label();
             titleFirstUpgrade.Text = "Simple\nsoldier";
-            titleFirstUpgrade.Size = new Size(110, 70);
+            titleFirstUpgrade.Size = new Size(100, 70);
             titleFirstUpgrade.Location = new Point(165, 130);
-            titleFirstUpgrade.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
+            titleFirstUpgrade.Font = new Font("PlayMeGames", 22, FontStyle.Italic);
             titleFirstUpgrade.ForeColor = Color.Teal;
             Controls.Add(titleFirstUpgrade);
             
             var countFirstUpgrade = new Label();
             countFirstUpgrade.Text = game.GameUpgrades[0].CountUpgrades.ToString() + "x";
-            countFirstUpgrade.Size = new Size(50, 30);
-            countFirstUpgrade.Location = new Point(295, 150);
+            countFirstUpgrade.Size = new Size(65, 30);
+            countFirstUpgrade.Location = new Point(285, 150);
             countFirstUpgrade.Font = titleFirstUpgrade.Font;
             countFirstUpgrade.ForeColor = Color.Teal;
             Controls.Add(countFirstUpgrade);
@@ -112,15 +112,15 @@ namespace Universe_invaders
             
             var titleSecondUpgrade = new Label();
             titleSecondUpgrade.Text = "The\nRifleman";
-            titleSecondUpgrade.Size = new Size(125, 65);
+            titleSecondUpgrade.Size = new Size(120, 65);
             titleSecondUpgrade.Location = new Point(170, 250);
-            titleSecondUpgrade.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
+            titleSecondUpgrade.Font = new Font("PlayMeGames", 18, FontStyle.Italic);
             titleSecondUpgrade.ForeColor = Color.Teal;
             Controls.Add(titleSecondUpgrade);
 
             var countSecondUpgrade = new Label();
             countSecondUpgrade.Text = game.GameUpgrades[1].CountUpgrades + "x";
-            countSecondUpgrade.Size = new Size(50, 30);
+            countSecondUpgrade.Size = new Size(65, 30);
             countSecondUpgrade.Location = new Point(285, 260);
             countSecondUpgrade.Font = titleFirstUpgrade.Font;
             countSecondUpgrade.ForeColor = Color.Teal;
@@ -165,7 +165,7 @@ namespace Universe_invaders
             
             var countThirdUpgrade = new Label();
             countThirdUpgrade.Text = game.GameUpgrades[2].CountUpgrades + "x";
-            countThirdUpgrade.Size = new Size(50, 30);
+            countThirdUpgrade.Size = new Size(65, 30);
             countThirdUpgrade.Location = new Point(285, 380);
             countThirdUpgrade.Font = titleFirstUpgrade.Font;
             countThirdUpgrade.ForeColor = Color.Teal;
@@ -210,7 +210,7 @@ namespace Universe_invaders
             
             var countFourthUpgrade = new Label();
             countFourthUpgrade.Text = game.GameUpgrades[3].CountUpgrades + "x";
-            countFourthUpgrade.Size = new Size(50, 30);
+            countFourthUpgrade.Size = new Size(65, 30);
             countFourthUpgrade.Location = new Point(285, 485);
             countFourthUpgrade.Font = titleFirstUpgrade.Font;
             countFourthUpgrade.ForeColor = Color.Teal;
@@ -255,7 +255,7 @@ namespace Universe_invaders
             
             var countFifthUpgrade = new Label();
             countFifthUpgrade.Text = game.GameUpgrades[4].CountUpgrades + "x";
-            countFifthUpgrade.Size = new Size(50, 30);
+            countFifthUpgrade.Size = new Size(65, 30);
             countFifthUpgrade.Location = new Point(285, 590);
             countFifthUpgrade.Font = titleFirstUpgrade.Font;
             countFifthUpgrade.ForeColor = Color.Teal;
