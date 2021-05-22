@@ -36,7 +36,7 @@ namespace Universe_invaders
             
             var money = new Label();
             money.Text = "Money: " + game.Player.Money.ToString() + " $";
-            money.Size = new Size(200, 30);
+            money.Size = new Size(240, 30);
             money.Location = new Point(50, 50);
             money.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             money.ForeColor = Color.Teal;
@@ -62,7 +62,7 @@ namespace Universe_invaders
             picturePurpleSoldier.Image = Image.FromFile
                 (@"..\..\Images\PurpleSoldier.png");
             picturePurpleSoldier.SizeMode = PictureBoxSizeMode.StretchImage;
-            picturePurpleSoldier.Location = new Point(70, 120); // y + 110
+            picturePurpleSoldier.Location = new Point(70, 120); 
             picturePurpleSoldier.Size = new Size(90, 88);
             Controls.Add(picturePurpleSoldier);
             
@@ -112,16 +112,16 @@ namespace Universe_invaders
             
             var titleSecondUpgrade = new Label();
             titleSecondUpgrade.Text = "The\nRifleman";
-            titleSecondUpgrade.Size = new Size(130, 65);
+            titleSecondUpgrade.Size = new Size(125, 65);
             titleSecondUpgrade.Location = new Point(170, 250);
-            titleSecondUpgrade.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
+            titleSecondUpgrade.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
             titleSecondUpgrade.ForeColor = Color.Teal;
             Controls.Add(titleSecondUpgrade);
 
             var countSecondUpgrade = new Label();
             countSecondUpgrade.Text = game.GameUpgrades[1].CountUpgrades + "x";
             countSecondUpgrade.Size = new Size(50, 30);
-            countSecondUpgrade.Location = new Point(295, 260);
+            countSecondUpgrade.Location = new Point(285, 260);
             countSecondUpgrade.Font = titleFirstUpgrade.Font;
             countSecondUpgrade.ForeColor = Color.Teal;
             Controls.Add(countSecondUpgrade);
@@ -141,7 +141,7 @@ namespace Universe_invaders
                     ChangeAutoDamage(autoDamage, game);
                     game.GameUpgrades[1].CountUpgrades++;
                     ChangeCountUpgrades(countSecondUpgrade, game, 1);
-                    game.GameUpgrades[1].Price += Convert.ToInt32(game.GameUpgrades[1].MainPrice * 1.1);
+                    game.GameUpgrades[1].Price += Convert.ToInt32(game.GameUpgrades[1].MainPrice * 1.2);
                     ChangeUpgradePrice(buttonSecondUpgrade, game, 1);
                 }
             };
@@ -166,7 +166,7 @@ namespace Universe_invaders
             var countThirdUpgrade = new Label();
             countThirdUpgrade.Text = game.GameUpgrades[2].CountUpgrades + "x";
             countThirdUpgrade.Size = new Size(50, 30);
-            countThirdUpgrade.Location = new Point(295, 380);
+            countThirdUpgrade.Location = new Point(285, 380);
             countThirdUpgrade.Font = titleFirstUpgrade.Font;
             countThirdUpgrade.ForeColor = Color.Teal;
             Controls.Add(countThirdUpgrade);
@@ -186,7 +186,7 @@ namespace Universe_invaders
                     ChangeAutoDamage(autoDamage, game);
                     game.GameUpgrades[2].CountUpgrades++;
                     ChangeCountUpgrades(countThirdUpgrade, game, 2);
-                    game.GameUpgrades[2].Price += Convert.ToInt32(game.GameUpgrades[2].MainPrice * 1.1);
+                    game.GameUpgrades[2].Price += Convert.ToInt32(game.GameUpgrades[2].MainPrice * 1.3);
                     ChangeUpgradePrice(buttonThirdUpgrade, game, 2);
                 }
             };
@@ -202,16 +202,16 @@ namespace Universe_invaders
             
             var titleFourthUpgrade = new Label();
             titleFourthUpgrade.Text = "Spaceship\ncrew";
-            titleFourthUpgrade.Size = new Size(125, 55);
+            titleFourthUpgrade.Size = new Size(120, 55);
             titleFourthUpgrade.Location = new Point(170, 475);
-            titleFourthUpgrade.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
+            titleFourthUpgrade.Font = new Font("PlayMeGames", 18, FontStyle.Italic);
             titleFourthUpgrade.ForeColor = Color.Teal;
             Controls.Add(titleFourthUpgrade);
             
             var countFourthUpgrade = new Label();
             countFourthUpgrade.Text = game.GameUpgrades[3].CountUpgrades + "x";
             countFourthUpgrade.Size = new Size(50, 30);
-            countFourthUpgrade.Location = new Point(295, 490);
+            countFourthUpgrade.Location = new Point(285, 485);
             countFourthUpgrade.Font = titleFirstUpgrade.Font;
             countFourthUpgrade.ForeColor = Color.Teal;
             Controls.Add(countFourthUpgrade);
@@ -231,7 +231,7 @@ namespace Universe_invaders
                     ChangeAutoDamage(autoDamage, game);
                     game.GameUpgrades[3].CountUpgrades++;
                     ChangeCountUpgrades(countFourthUpgrade, game, 3);
-                    game.GameUpgrades[3].Price += Convert.ToInt32(game.GameUpgrades[3].MainPrice * 1.1);
+                    game.GameUpgrades[3].Price += Convert.ToInt32(game.GameUpgrades[3].MainPrice * 1.4);
                     ChangeUpgradePrice(buttonFourthUpgrade, game, 3);
                 }
             };
@@ -247,7 +247,7 @@ namespace Universe_invaders
             
             var titleFifthUpgrade = new Label();
             titleFifthUpgrade.Text = "Space\nexplorers";
-            titleFifthUpgrade.Size = new Size(125, 55);
+            titleFifthUpgrade.Size = new Size(120, 55);
             titleFifthUpgrade.Location = new Point(170, 580);
             titleFifthUpgrade.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
             titleFifthUpgrade.ForeColor = Color.Teal;
@@ -256,7 +256,7 @@ namespace Universe_invaders
             var countFifthUpgrade = new Label();
             countFifthUpgrade.Text = game.GameUpgrades[4].CountUpgrades + "x";
             countFifthUpgrade.Size = new Size(50, 30);
-            countFifthUpgrade.Location = new Point(295, 590);
+            countFifthUpgrade.Location = new Point(285, 590);
             countFifthUpgrade.Font = titleFirstUpgrade.Font;
             countFifthUpgrade.ForeColor = Color.Teal;
             Controls.Add(countFifthUpgrade);
@@ -276,7 +276,7 @@ namespace Universe_invaders
                     ChangeAutoDamage(autoDamage, game);
                     game.GameUpgrades[4].CountUpgrades++;
                     ChangeCountUpgrades(countFifthUpgrade, game, 4);
-                    game.GameUpgrades[4].Price += Convert.ToInt32(game.GameUpgrades[4].MainPrice * 1.1);
+                    game.GameUpgrades[4].Price += Convert.ToInt32(game.GameUpgrades[4].MainPrice * 1.5);
                     ChangeUpgradePrice(buttonFifthUpgrade, game, 4);
                 }
             };
@@ -316,7 +316,7 @@ namespace Universe_invaders
                     money.Text = "Money: " + game.Player.Money + " $";
                     game.CurrentLevel++;
                     titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
-                    game.HealthMin = Convert.ToInt32(game.HealthMin * 1.2);
+                    game.HealthMin = Convert.ToInt32(game.HealthMin * 1.4);
                     game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
                     game.CurrentMonster = new Monster("OrangeMonster", game.HealthMin, game.MoneyWinMin);
                     progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
@@ -337,7 +337,7 @@ namespace Universe_invaders
                     money.Text = "Money: " + game.Player.Money + " $";
                     game.CurrentLevel++;
                     titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
-                    game.HealthMin = Convert.ToInt32(game.HealthMin * 1.2);
+                    game.HealthMin = Convert.ToInt32(game.HealthMin * 1.4);
                     game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
                     game.CurrentMonster = new Monster("OrangeMonster", game.HealthMin, game.MoneyWinMin);
                     progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
