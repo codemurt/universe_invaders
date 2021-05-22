@@ -59,7 +59,7 @@ namespace Universe_invaders
 
             var picturePurpleSoldier = new PictureBox();
             picturePurpleSoldier.Image = Image.FromFile
-                (@"C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\Images\PurpleSoldier.png");
+                (@"..\..\Images\PurpleSoldier.png");
             picturePurpleSoldier.SizeMode = PictureBoxSizeMode.StretchImage;
             picturePurpleSoldier.Location = new Point(70, 120); // y + 110
             picturePurpleSoldier.Size = new Size(90, 88);
@@ -88,7 +88,7 @@ namespace Universe_invaders
             
             var pictureTheRifleman = new PictureBox();
             pictureTheRifleman.Image = Image.FromFile
-                (@"C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\Images\TheRifleman.png");
+                (@"..\..\Images\TheRifleman.png");
             pictureTheRifleman.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureTheRifleman.Location = new Point(70, 230);
             pictureTheRifleman.Size = new Size(90, 88);
@@ -117,7 +117,7 @@ namespace Universe_invaders
             
             var pictureRobot = new PictureBox();
             pictureRobot.Image = Image.FromFile
-                (@"C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\Images\Robot.png");
+                (@"..\..\Images\Robot.png");
             pictureRobot.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureRobot.Location = new Point(70, 340);
             pictureRobot.Size = new Size(90, 88);
@@ -146,7 +146,7 @@ namespace Universe_invaders
             
             var pictureSpaceshipCrew = new PictureBox();
             pictureSpaceshipCrew.Image = Image.FromFile
-                (@"C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\Images\SpaceshipCrew.png");
+                (@"..\..\Images\SpaceshipCrew.png");
             pictureSpaceshipCrew.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureSpaceshipCrew.Location = new Point(70, 450);
             pictureSpaceshipCrew.Size = new Size(90, 88);
@@ -175,7 +175,7 @@ namespace Universe_invaders
             
             var pictureSpaceExplorers = new PictureBox();
             pictureSpaceExplorers.Image = Image.FromFile
-                (@"C:\Programming\git\universe-invaders\Universe-invaders\Universe-invaders\Images\SpaceExplorers.png");
+                (@"..\..\Images\SpaceExplorers.png");
             pictureSpaceExplorers.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureSpaceExplorers.Location = new Point(70, 560);
             pictureSpaceExplorers.Size = new Size(90, 88);
@@ -212,7 +212,7 @@ namespace Universe_invaders
             
             var pictureMonster = new PictureBox();
             pictureMonster.Image = Image.FromFile
-                ("C:\\Programming\\git\\universe-invaders\\Universe-invaders\\Universe-invaders\\Images\\" + game.CurrentMonster.Name + ".gif");
+                ("..\\..\\Images\\" + game.CurrentMonster.Name + ".gif");
             pictureMonster.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureMonster.Location = new Point(ClientSize.Width - 550, titleCurrentLevel.Bottom);
             pictureMonster.Size = new Size(270, 350);
