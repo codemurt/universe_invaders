@@ -14,9 +14,10 @@ namespace Universe_invaders
         [STAThread]
         static void Main()
         {
+            var game = new Game();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuForm());
+            Application.Run(new MenuForm(game));
         }
     }
 }

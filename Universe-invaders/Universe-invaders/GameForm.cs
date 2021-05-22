@@ -20,7 +20,7 @@ namespace Universe_invaders
             buttonToMenu.button.Location = new Point(ClientSize.Width - 375, ClientSize.Height - 55);
             buttonToMenu.button.Click += (s, e) =>
             {
-                var menuForm = new MenuForm();
+                var menuForm = new MenuForm(game);
                 menuForm.Show();
                 this.Close();
             };
@@ -205,7 +205,7 @@ namespace Universe_invaders
             
             var titleCurrentLevel = new Label();
             titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
-            titleCurrentLevel.Size = new Size(200, 55);
+            titleCurrentLevel.Size = new Size(210, 55);
             titleCurrentLevel.Location = new Point(ClientSize.Width - 500, 100);
             titleCurrentLevel.Font = new Font("PlayMeGames", 40, FontStyle.Italic);
             titleCurrentLevel.ForeColor = Color.Teal;
@@ -242,8 +242,14 @@ namespace Universe_invaders
                     game.CurrentMonster = new Monster("OrangeMonster", game.HealthMin, game.MoneyWinMin);
                     progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
                 }
+                
 
                 progressBarMonsterHealth.Value = game.CurrentMonster.Health;
+            };
+            
+            pictureMonster.MouseHover += (s, e) =>
+            {
+                Cursor.Current = Cursors.Hand;
             };
         }
 
