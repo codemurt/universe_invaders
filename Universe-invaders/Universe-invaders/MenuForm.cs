@@ -22,8 +22,6 @@ namespace Universe_invaders
 
             ClientSize = Screen.FromControl(this).WorkingArea.Size;
             
-            
-
             var menuTitle = new Label();
             menuTitle.Text = "UNIVERSE\nINVADERS";
             menuTitle.Size = new Size(900, 400);
@@ -41,15 +39,12 @@ namespace Universe_invaders
                 gameForm.Show();
                 this.Hide();
             };
-            
-            buttonStart.button.MouseHover += (s, e) => Cursor.Current = Cursors.Hand;
 
             var buttonExit = new GameButton();
             buttonExit.button.Text = "exit";
             buttonExit.button.Location = new Point(ClientSize.Width / 2 - 175, buttonStart.button.Bottom + 10);
             buttonExit.button.Click += (s, e) => Application.Exit();
             buttonExit.button.Font = new Font("PlayMeGames", 45, FontStyle.Italic);
-            buttonExit.button.MouseHover += (s, e) => Cursor.Current = Cursors.Hand;
 
             Controls.Add(menuTitle);
             Controls.Add(buttonStart.button);

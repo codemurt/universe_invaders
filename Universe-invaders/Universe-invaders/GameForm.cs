@@ -85,6 +85,21 @@ namespace Universe_invaders
             var buttonFirstUpgrade = new UpgradeButton();
             buttonFirstUpgrade.button.Text = game.GameUpgrades[0].Price + "$";
             buttonFirstUpgrade.button.Location = new Point(350, 120);
+            buttonFirstUpgrade.button.Click += (s, e) =>
+            {
+                if (game.Player.Money >= game.GameUpgrades[0].Price)
+                {
+                    game.Player.Money -= game.GameUpgrades[0].Price;
+                    ChangeMoneyStatus(money, game);
+                    game.Player.DamageClick += game.GameUpgrades[0].IncreaseClickDamage;
+                    ChangeDamageClick(damageClick, game);
+                    game.GameUpgrades[0].CountUpgrades++;
+                    ChangeCountUpgrades(countFirstUpgrade, game, 0);
+                    game.GameUpgrades[0].Price += Convert.ToInt32(game.GameUpgrades[0].MainPrice * 1.1);
+                    ChangeUpgradePrice(buttonFirstUpgrade, game, 0);
+                }
+            };
+            
             Controls.Add(buttonFirstUpgrade.button);
             
             var pictureTheRifleman = new PictureBox();
@@ -114,6 +129,22 @@ namespace Universe_invaders
             var buttonSecondUpgrade = new UpgradeButton();
             buttonSecondUpgrade.button.Text = game.GameUpgrades[1].Price + "$";
             buttonSecondUpgrade.button.Location = new Point(350, 230);
+            buttonSecondUpgrade.button.Click += (s, e) =>
+            {
+                if (game.Player.Money >= game.GameUpgrades[1].Price)
+                {
+                    game.Player.Money -= game.GameUpgrades[1].Price;
+                    ChangeMoneyStatus(money, game);
+                    game.Player.DamageClick += game.GameUpgrades[1].IncreaseClickDamage;
+                    ChangeDamageClick(damageClick, game);
+                    game.Player.AutoDamage += game.GameUpgrades[1].IncreaseAutoDamage;
+                    ChangeAutoDamage(autoDamage, game);
+                    game.GameUpgrades[1].CountUpgrades++;
+                    ChangeCountUpgrades(countSecondUpgrade, game, 1);
+                    game.GameUpgrades[1].Price += Convert.ToInt32(game.GameUpgrades[1].MainPrice * 1.1);
+                    ChangeUpgradePrice(buttonSecondUpgrade, game, 1);
+                }
+            };
             Controls.Add(buttonSecondUpgrade.button);
             
             var pictureRobot = new PictureBox();
@@ -223,7 +254,7 @@ namespace Universe_invaders
             progressBarMonsterHealth.Size = new Size(400, 40);
             progressBarMonsterHealth.Location = new Point(ClientSize.Width - 620, pictureMonster.Bottom + 20);
             progressBarMonsterHealth.Minimum = 0;
-            progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
+            progressBarMonsterHealth.Maximum = game.HealthMin;
             progressBarMonsterHealth.Value = game.CurrentMonster.Health;
             Controls.Add(progressBarMonsterHealth);
             
@@ -238,18 +269,12 @@ namespace Universe_invaders
                     game.CurrentLevel++;
                     titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
                     game.HealthMin = Convert.ToInt32(game.HealthMin * 1.2);
-                    game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.5);
+                    game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
                     game.CurrentMonster = new Monster("OrangeMonster", game.HealthMin, game.MoneyWinMin);
                     progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
                 }
                 
-
                 progressBarMonsterHealth.Value = game.CurrentMonster.Health;
-            };
-            
-            pictureMonster.MouseHover += (s, e) =>
-            {
-                Cursor.Current = Cursors.Hand;
             };
         }
 
@@ -262,6 +287,31 @@ namespace Universe_invaders
             graphics.DrawRectangle(new Pen(Color.Teal, 6), 60, 332, 515, 100);
             graphics.DrawRectangle(new Pen(Color.Teal, 6), 60, 442, 515, 100);
             graphics.DrawRectangle(new Pen(Color.Teal, 6), 60, 552, 515, 100);
+        }
+
+        private void ChangeMoneyStatus(Label money, Game game)
+        {
+            money.Text = "Money: " + game.Player.Money + " $";
+        }
+
+        private void ChangeDamageClick(Label damageClick, Game game)
+        {
+            damageClick.Text = "Damage Per Click: " + game.Player.DamageClick + " p.";
+        }
+
+        private void ChangeCountUpgrades(Label countUpgrade, Game game, int index)
+        {
+            countUpgrade.Text = game.GameUpgrades[index].CountUpgrades + "x";
+        }
+
+        private void ChangeUpgradePrice(UpgradeButton button, Game game, int index)
+        {
+            button.button.Text = game.GameUpgrades[index].Price + "$";
+        }
+
+        private void ChangeAutoDamage(Label autoDamage, Game game)
+        {
+            autoDamage.Text = "Auto Damage: " + game.Player.AutoDamage + " p/sec.";
         }
     }
 }

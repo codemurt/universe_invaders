@@ -37,6 +37,8 @@ namespace Universe_invaders
             };
             button.TabStop = false;
             button.Font = new Font("PlayMeGames", 35, FontStyle.Italic);
+            
+            button.MouseHover += (s, e) => Cursor.Current = Cursors.Hand;
         }
         
     }

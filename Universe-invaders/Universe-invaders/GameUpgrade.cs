@@ -7,6 +7,7 @@
         public int IncreaseClickDamage;
         public int IncreaseAutoDamage;
         public string Name;
+        public int MainPrice;
 
         public GameUpgrade(string name, int price, int increaseClickDamage, int increaseAutoDamage)
         {
@@ -15,6 +16,7 @@
             IncreaseClickDamage = increaseClickDamage;
             IncreaseAutoDamage = increaseAutoDamage;
             CountUpgrades = 0;
+            MainPrice = price;
         }
     }
 }

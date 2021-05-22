@@ -24,6 +24,7 @@ namespace Universe_invaders
             {
                 button.BackColor = colorGreenDark;
                 button.ForeColor = Color.White;
+                Cursor.Current = Cursors.Hand;
             };
             button.MouseLeave += (s, e) =>
             {
