@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Universe_invaders
@@ -11,7 +12,6 @@ namespace Universe_invaders
         public Monster CurrentMonster;
         public int HealthMin = 10;
         public int MoneyWinMin = 2;
-        public Timer timer;
 
         public Game()
         {
@@ -24,8 +24,16 @@ namespace Universe_invaders
             GameUpgrades.Add(new GameUpgrade("Space explorers", 3000, 500, 850));
 
             CurrentLevel = 1;
+
+            string nextMonsterName = null;
+            var rnd = new Random();
+            var numberOfNextMonster = rnd.Next() % 2;
+            if (numberOfNextMonster == 0)
+                nextMonsterName = "OrangeMonster";
+            else
+                nextMonsterName = "BlueMonster";
             
-            CurrentMonster = new Monster("OrangeMonster", 10, 2);
+            CurrentMonster = new Monster(nextMonsterName, 10, 2);
         }
     }
 }

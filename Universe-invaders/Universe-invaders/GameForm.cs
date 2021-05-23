@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Media;
 
 namespace Universe_invaders
 {
     public partial class GameForm : Form
     {
+        SoundPlayer soundOfHit = new SoundPlayer(@"..\..\Music\SoundOfHit.wav");
+        
         public GameForm(Game game)
         {
             InitializeComponent();
@@ -14,12 +17,16 @@ namespace Universe_invaders
             WindowState = FormWindowState.Maximized;
 
             ClientSize = Screen.FromControl(this).WorkingArea.Size;
+            
+            var sound = new SoundPlayer(@"..\..\Music\GameMusic2.wav");
+            sound.PlayLooping();
 
             var buttonToMenu = new GameButton();
             buttonToMenu.button.Text = "menu";
             buttonToMenu.button.Location = new Point(ClientSize.Width - 375, ClientSize.Height - 55);
             buttonToMenu.button.Click += (s, e) =>
             {
+                sound.Stop();
                 var menuForm = new MenuForm(game);
                 menuForm.Show();
                 this.Close();
@@ -33,6 +40,28 @@ namespace Universe_invaders
 
             Controls.Add(buttonToMenu.button);
             Controls.Add(buttonToAchievements.button);
+
+            var buttonOfSound = new GameButton();
+            buttonOfSound.button.Text = "sound off";
+            buttonOfSound.button.Location = new Point(50, ClientSize.Height - 50);
+            buttonOfSound.button.Font = new Font("PlayMeGames", 35, FontStyle.Italic);
+            buttonOfSound.button.Size = new Size(300, 75);
+
+            buttonOfSound.button.Click += (s, e) =>
+            {
+                if (buttonOfSound.button.Text == "sound off")
+                {
+                    sound.Stop();
+                    buttonOfSound.button.Text = "sound on";
+                }
+                else
+                {
+                    sound.PlayLooping();
+                    buttonOfSound.button.Text = "sound off";
+                }
+            };
+            
+            Controls.Add(buttonOfSound.button);
             
             var money = new Label();
             money.Text = "Money: " + game.Player.Money.ToString() + " $";
@@ -318,7 +347,9 @@ namespace Universe_invaders
                     titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
                     game.HealthMin = Convert.ToInt32(game.HealthMin * 1.4);
                     game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
-                    game.CurrentMonster = new Monster("OrangeMonster", game.HealthMin, game.MoneyWinMin);
+                    
+                    game.CurrentMonster = new Monster(GetNextMonster(), game.HealthMin, game.MoneyWinMin);
+                    ChangePictureMonster(game, pictureMonster);
                     progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
                 }
                 
@@ -339,13 +370,22 @@ namespace Universe_invaders
                     titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
                     game.HealthMin = Convert.ToInt32(game.HealthMin * 1.4);
                     game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
-                    game.CurrentMonster = new Monster("OrangeMonster", game.HealthMin, game.MoneyWinMin);
+                    game.CurrentMonster = new Monster(GetNextMonster(), game.HealthMin, game.MoneyWinMin);
+                    ChangePictureMonster(game, pictureMonster);
                     progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
                 }
                 
                 progressBarMonsterHealth.Value = game.CurrentMonster.Health;
             };
             timer.Start();
+        }
+
+        private string GetNextMonster()
+        {
+            var rnd = new Random();
+            var numberOfNextMonster = rnd.Next() % 2;
+
+            return numberOfNextMonster == 0 ? "OrangeMonster" : "BlueMonster";
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -382,6 +422,13 @@ namespace Universe_invaders
         private void ChangeAutoDamage(Label autoDamage, Game game)
         {
             autoDamage.Text = "Auto Damage: " + game.Player.AutoDamage + " p/sec.";
+        }
+
+        private void ChangePictureMonster(Game game, PictureBox pictureMonster)
+        {
+            
+            pictureMonster.Image = Image.FromFile
+                ("..\\..\\Images\\" + game.CurrentMonster.Name + ".gif");
         }
     }
 }
