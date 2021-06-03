@@ -85,6 +85,13 @@ namespace Universe_invaders
             damageClick.ForeColor = Color.Teal;
             Controls.Add(damageClick);
             
+            var increaseValueDamagePerClick = new Label();
+            increaseValueDamagePerClick.Size = new Size(280, 30);
+            increaseValueDamagePerClick.Location = new Point(ClientSize.Width / 2 - 100, 30);
+            increaseValueDamagePerClick.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
+            increaseValueDamagePerClick.ForeColor = Color.Green;
+            Controls.Add(increaseValueDamagePerClick);
+            
             var autoDamage = new Label();
             autoDamage.Text = "Auto Damage: " + game.Player.AutoDamage.ToString() + " p/sec.";
             autoDamage.Size = new Size(400, 30);
@@ -92,6 +99,13 @@ namespace Universe_invaders
             autoDamage.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             autoDamage.ForeColor = Color.Teal;
             Controls.Add(autoDamage);
+            
+            var increaseValueAutoDamage = new Label();
+            increaseValueAutoDamage.Size = new Size(280, 30);
+            increaseValueAutoDamage.Location = new Point(ClientSize.Width - 300, 30);
+            increaseValueAutoDamage.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
+            increaseValueAutoDamage.ForeColor = Color.Green;
+            Controls.Add(increaseValueAutoDamage);
 
             var picturePurpleSoldier = new PictureBox();
             picturePurpleSoldier.Image = Image.FromFile
@@ -117,7 +131,7 @@ namespace Universe_invaders
             countFirstUpgrade.ForeColor = Color.Teal;
             Controls.Add(countFirstUpgrade);
             
-            var buttonFirstUpgrade = new UpgradeButton();
+            var buttonFirstUpgrade = new UpgradeButton(game.GameUpgrades[0], increaseValueDamagePerClick, increaseValueAutoDamage);
             buttonFirstUpgrade.button.Text = game.GameUpgrades[0].Price + "$";
             buttonFirstUpgrade.button.Location = new Point(350, 120);
             buttonFirstUpgrade.button.Click += (s, e) =>
@@ -161,7 +175,7 @@ namespace Universe_invaders
             countSecondUpgrade.ForeColor = Color.Teal;
             Controls.Add(countSecondUpgrade);
             
-            var buttonSecondUpgrade = new UpgradeButton();
+            var buttonSecondUpgrade = new UpgradeButton(game.GameUpgrades[1], increaseValueDamagePerClick, increaseValueAutoDamage);
             buttonSecondUpgrade.button.Text = game.GameUpgrades[1].Price + "$";
             buttonSecondUpgrade.button.Location = new Point(350, 230);
             buttonSecondUpgrade.button.Click += (s, e) =>
@@ -206,7 +220,7 @@ namespace Universe_invaders
             countThirdUpgrade.ForeColor = Color.Teal;
             Controls.Add(countThirdUpgrade);
             
-            var buttonThirdUpgrade = new UpgradeButton();
+            var buttonThirdUpgrade = new UpgradeButton(game.GameUpgrades[2], increaseValueDamagePerClick, increaseValueAutoDamage);
             buttonThirdUpgrade.button.Text = game.GameUpgrades[2].Price + "$";
             buttonThirdUpgrade.button.Location = new Point(350, 340);
             buttonThirdUpgrade.button.Click += (s, e) =>
@@ -251,7 +265,7 @@ namespace Universe_invaders
             countFourthUpgrade.ForeColor = Color.Teal;
             Controls.Add(countFourthUpgrade);
             
-            var buttonFourthUpgrade = new UpgradeButton();
+            var buttonFourthUpgrade = new UpgradeButton(game.GameUpgrades[3], increaseValueDamagePerClick, increaseValueAutoDamage);
             buttonFourthUpgrade.button.Text = game.GameUpgrades[3].Price + "$";
             buttonFourthUpgrade.button.Location = new Point(350, 450);
             buttonFourthUpgrade.button.Click += (s, e) =>
@@ -296,7 +310,7 @@ namespace Universe_invaders
             countFifthUpgrade.ForeColor = Color.Teal;
             Controls.Add(countFifthUpgrade);
             
-            var buttonFifthUpgrade = new UpgradeButton();
+            var buttonFifthUpgrade = new UpgradeButton(game.GameUpgrades[4], increaseValueDamagePerClick, increaseValueAutoDamage);
             buttonFifthUpgrade.button.Text = game.GameUpgrades[4].Price + "$";
             buttonFifthUpgrade.button.Location = new Point(350, 560);
             buttonFifthUpgrade.button.Click += (s, e) =>
@@ -320,7 +334,7 @@ namespace Universe_invaders
             var titleCurrentLevel = new Label();
             titleCurrentLevel.Text = "Level: " + game.CurrentLevel + "/50";
             titleCurrentLevel.Size = new Size(290, 55);
-            titleCurrentLevel.Location = new Point(ClientSize.Width - 600, 100);
+            titleCurrentLevel.Location = new Point(ClientSize.Width - 550, 100);
             titleCurrentLevel.Font = new Font("PlayMeGames", 40, FontStyle.Italic);
             titleCurrentLevel.ForeColor = Color.Teal;
             Controls.Add(titleCurrentLevel);

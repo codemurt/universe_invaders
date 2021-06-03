@@ -21,6 +21,7 @@ namespace Universe_invaders
             WindowState = FormWindowState.Maximized;
 
             ClientSize = Screen.FromControl(this).WorkingArea.Size;
+            game.clientSize = ClientSize;
             
             var sound = new SoundPlayer(@"..\..\Music\MenuMusic.wav");
             sound.PlayLooping();

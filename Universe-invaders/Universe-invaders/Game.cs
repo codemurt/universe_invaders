@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Universe_invaders
@@ -12,6 +13,7 @@ namespace Universe_invaders
         public Monster CurrentMonster;
         public int HealthMin = 10;
         public int MoneyWinMin = 2;
+        public Size clientSize;
 
         public Game()
         {

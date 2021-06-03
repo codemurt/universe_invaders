@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using System;
 
 namespace Universe_invaders
 {
@@ -7,7 +8,7 @@ namespace Universe_invaders
     {
         public Button button = new Button();
 
-        public UpgradeButton()
+        public UpgradeButton(GameUpgrade gameUpgrade, Label increaseValueDamagePerClick, Label increaseValueAutoDamage)
         {
             var colorBlue = ColorTranslator.FromHtml("#D3E0EA");
             var colorGreen = ColorTranslator.FromHtml("#276678");
@@ -26,12 +27,15 @@ namespace Universe_invaders
                 button.BackColor = Color.LimeGreen;
                 button.ForeColor = Color.White;
                 
-                
+                increaseValueDamagePerClick.Text = "+ " + gameUpgrade.IncreaseClickDamage;
+                increaseValueAutoDamage.Text = "+ " + gameUpgrade.IncreaseAutoDamage;
             };
             button.MouseLeave += (s, e) =>
             {
                 button.BackColor = colorBlue;
                 button.ForeColor = Color.Teal;
+                increaseValueDamagePerClick.Text = "";
+                increaseValueAutoDamage.Text = "";
             };
             button.Click += (s, e) =>
             {
