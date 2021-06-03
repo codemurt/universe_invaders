@@ -12,7 +12,7 @@ namespace Universe_invaders
         public GameForm(Game game)
         {
             InitializeComponent();
-            TopMost = true;
+            
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
 
@@ -33,13 +33,19 @@ namespace Universe_invaders
             };
             buttonToMenu.button.Font = new Font("PlayMeGames", 45, FontStyle.Italic);
 
-            var buttonToAchievements = new GameButton();
-            buttonToAchievements.button.Text = "achievements";
-            buttonToAchievements.button.Location = new Point(ClientSize.Width - 375 - 355, ClientSize.Height - 55);
-            buttonToAchievements.button.Font = new Font("PlayMeGames", 35, FontStyle.Italic);
+            var buttonHowToPlay = new GameButton();
+            buttonHowToPlay.button.Text = "How to play";
+            buttonHowToPlay.button.Location = new Point(ClientSize.Width - 375 - 355, ClientSize.Height - 55);
+            buttonHowToPlay.button.Font = new Font("PlayMeGames", 35, FontStyle.Italic);
+            buttonHowToPlay.button.Click += (s, e) =>
+            {
+                MessageBox.Show("Твоя цель пройти 50 уровней. Для этого тебе нужно прокачивать свою армию." +
+                                "Чтобы получить деньги нужно кликать по монстру, после его смерти, ты получишь монеты. Их ты можешь потратить слева, в окне улучшений." +
+                                "И уже со второго улучшения, тебе будет доступен Автоурон");
+            };
 
             Controls.Add(buttonToMenu.button);
-            Controls.Add(buttonToAchievements.button);
+            Controls.Add(buttonHowToPlay.button);
 
             var buttonOfSound = new GameButton();
             buttonOfSound.button.Text = "sound off";
@@ -65,7 +71,7 @@ namespace Universe_invaders
             
             var money = new Label();
             money.Text = "Money: " + game.Player.Money.ToString() + " $";
-            money.Size = new Size(240, 30);
+            money.Size = new Size(260, 30);
             money.Location = new Point(50, 50);
             money.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             money.ForeColor = Color.Teal;
@@ -73,7 +79,7 @@ namespace Universe_invaders
             
             var damageClick = new Label();
             damageClick.Text = "Damage Per Click: " + game.Player.DamageClick.ToString() + " p.";
-            damageClick.Size = new Size(350, 30);
+            damageClick.Size = new Size(380, 30);
             damageClick.Location = new Point(ClientSize.Width / 2 - 200, 50);
             damageClick.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             damageClick.ForeColor = Color.Teal;
@@ -312,9 +318,9 @@ namespace Universe_invaders
             Controls.Add(buttonFifthUpgrade.button);
             
             var titleCurrentLevel = new Label();
-            titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
-            titleCurrentLevel.Size = new Size(230, 55);
-            titleCurrentLevel.Location = new Point(ClientSize.Width - 500, 100);
+            titleCurrentLevel.Text = "Level: " + game.CurrentLevel + "/50";
+            titleCurrentLevel.Size = new Size(290, 55);
+            titleCurrentLevel.Location = new Point(ClientSize.Width - 600, 100);
             titleCurrentLevel.Font = new Font("PlayMeGames", 40, FontStyle.Italic);
             titleCurrentLevel.ForeColor = Color.Teal;
             Controls.Add(titleCurrentLevel);
@@ -344,7 +350,7 @@ namespace Universe_invaders
                     game.Player.Money += game.CurrentMonster.MoneyWin;
                     money.Text = "Money: " + game.Player.Money + " $";
                     game.CurrentLevel++;
-                    titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
+                    titleCurrentLevel.Text = "Level: " + game.CurrentLevel + "/50";
                     game.HealthMin = Convert.ToInt32(game.HealthMin * 1.4);
                     game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
                     
@@ -367,7 +373,7 @@ namespace Universe_invaders
                     game.Player.Money += game.CurrentMonster.MoneyWin;
                     money.Text = "Money: " + game.Player.Money + " $";
                     game.CurrentLevel++;
-                    titleCurrentLevel.Text = "Level: " + game.CurrentLevel;
+                    titleCurrentLevel.Text = "Level: " + game.CurrentLevel + "/50";
                     game.HealthMin = Convert.ToInt32(game.HealthMin * 1.4);
                     game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
                     game.CurrentMonster = new Monster(GetNextMonster(), game.HealthMin, game.MoneyWinMin);

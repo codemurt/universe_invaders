@@ -17,7 +17,6 @@ namespace Universe_invaders
         {
             InitializeComponent();
             
-            TopMost = true;
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
 
