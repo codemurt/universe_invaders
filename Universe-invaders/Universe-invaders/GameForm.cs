@@ -39,9 +39,9 @@ namespace Universe_invaders
             buttonHowToPlay.button.Font = new Font("PlayMeGames", 35, FontStyle.Italic);
             buttonHowToPlay.button.Click += (s, e) =>
             {
-                MessageBox.Show("Твоя цель пройти 50 уровней. Для этого тебе нужно прокачивать свою армию." +
+                MessageBox.Show("Твоя цель пройти 50 уровней. Для этого тебе нужно прокачивать свою армию. " +
                                 "Чтобы получить деньги нужно кликать по монстру, после его смерти, ты получишь монеты. Их ты можешь потратить слева, в окне улучшений." +
-                                "И уже со второго улучшения, тебе будет доступен Автоурон");
+                                " И уже со второго улучшения, тебе будет доступен Автоурон.");
             };
 
             Controls.Add(buttonToMenu.button);
@@ -87,7 +87,7 @@ namespace Universe_invaders
             
             var increaseValueDamagePerClick = new Label();
             increaseValueDamagePerClick.Size = new Size(280, 30);
-            increaseValueDamagePerClick.Location = new Point(ClientSize.Width / 2 - 100, 30);
+            increaseValueDamagePerClick.Location = new Point(ClientSize.Width / 2 + 30, 25);
             increaseValueDamagePerClick.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
             increaseValueDamagePerClick.ForeColor = Color.Green;
             Controls.Add(increaseValueDamagePerClick);
@@ -102,7 +102,7 @@ namespace Universe_invaders
             
             var increaseValueAutoDamage = new Label();
             increaseValueAutoDamage.Size = new Size(280, 30);
-            increaseValueAutoDamage.Location = new Point(ClientSize.Width - 300, 30);
+            increaseValueAutoDamage.Location = new Point(ClientSize.Width - 200, 25);
             increaseValueAutoDamage.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
             increaseValueAutoDamage.ForeColor = Color.Green;
             Controls.Add(increaseValueAutoDamage);
@@ -146,6 +146,8 @@ namespace Universe_invaders
                     ChangeCountUpgrades(countFirstUpgrade, game, 0);
                     game.GameUpgrades[0].Price += Convert.ToInt32(game.GameUpgrades[0].MainPrice * 1.1);
                     ChangeUpgradePrice(buttonFirstUpgrade, game, 0);
+                    game.GameUpgrades[0].IncreaseClickDamage +=
+                        Convert.ToInt32(game.GameUpgrades[0].IncreaseClickDamage * 1.1);
                 }
             };
             
@@ -192,6 +194,10 @@ namespace Universe_invaders
                     ChangeCountUpgrades(countSecondUpgrade, game, 1);
                     game.GameUpgrades[1].Price += Convert.ToInt32(game.GameUpgrades[1].MainPrice * 1.2);
                     ChangeUpgradePrice(buttonSecondUpgrade, game, 1);
+                    game.GameUpgrades[1].IncreaseClickDamage +=
+                        Convert.ToInt32(game.GameUpgrades[1].IncreaseClickDamage * 1.1);
+                    game.GameUpgrades[1].IncreaseAutoDamage +=
+                        Convert.ToInt32(game.GameUpgrades[1].IncreaseAutoDamage * 1.1);
                 }
             };
             Controls.Add(buttonSecondUpgrade.button);
@@ -237,6 +243,10 @@ namespace Universe_invaders
                     ChangeCountUpgrades(countThirdUpgrade, game, 2);
                     game.GameUpgrades[2].Price += Convert.ToInt32(game.GameUpgrades[2].MainPrice * 1.3);
                     ChangeUpgradePrice(buttonThirdUpgrade, game, 2);
+                    game.GameUpgrades[2].IncreaseClickDamage +=
+                        Convert.ToInt32(game.GameUpgrades[2].IncreaseClickDamage * 1.1);
+                    game.GameUpgrades[2].IncreaseAutoDamage +=
+                        Convert.ToInt32(game.GameUpgrades[2].IncreaseAutoDamage * 1.1);
                 }
             };
             Controls.Add(buttonThirdUpgrade.button);
@@ -282,6 +292,10 @@ namespace Universe_invaders
                     ChangeCountUpgrades(countFourthUpgrade, game, 3);
                     game.GameUpgrades[3].Price += Convert.ToInt32(game.GameUpgrades[3].MainPrice * 1.4);
                     ChangeUpgradePrice(buttonFourthUpgrade, game, 3);
+                    game.GameUpgrades[3].IncreaseClickDamage +=
+                        Convert.ToInt32(game.GameUpgrades[3].IncreaseClickDamage * 1.1);
+                    game.GameUpgrades[3].IncreaseAutoDamage +=
+                        Convert.ToInt32(game.GameUpgrades[3].IncreaseAutoDamage * 1.1);
                 }
             };
             Controls.Add(buttonFourthUpgrade.button);
@@ -327,13 +341,17 @@ namespace Universe_invaders
                     ChangeCountUpgrades(countFifthUpgrade, game, 4);
                     game.GameUpgrades[4].Price += Convert.ToInt32(game.GameUpgrades[4].MainPrice * 1.5);
                     ChangeUpgradePrice(buttonFifthUpgrade, game, 4);
+                    game.GameUpgrades[4].IncreaseClickDamage +=
+                        Convert.ToInt32(game.GameUpgrades[4].IncreaseClickDamage * 1.1);
+                    game.GameUpgrades[4].IncreaseAutoDamage +=
+                        Convert.ToInt32(game.GameUpgrades[4].IncreaseAutoDamage * 1.1);
                 }
             };
             Controls.Add(buttonFifthUpgrade.button);
             
             var titleCurrentLevel = new Label();
             titleCurrentLevel.Text = "Level: " + game.CurrentLevel + "/50";
-            titleCurrentLevel.Size = new Size(290, 55);
+            titleCurrentLevel.Size = new Size(320, 55);
             titleCurrentLevel.Location = new Point(ClientSize.Width - 550, 100);
             titleCurrentLevel.Font = new Font("PlayMeGames", 40, FontStyle.Italic);
             titleCurrentLevel.ForeColor = Color.Teal;
@@ -373,7 +391,8 @@ namespace Universe_invaders
                     progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
                 }
                 
-                progressBarMonsterHealth.Value = game.CurrentMonster.Health;
+                if (game.CurrentMonster.Health <= progressBarMonsterHealth.Maximum && game.CurrentMonster.Health >= progressBarMonsterHealth.Minimum)
+                    progressBarMonsterHealth.Value = game.CurrentMonster.Health;
             };
             
             var timer = new Timer();
@@ -394,8 +413,8 @@ namespace Universe_invaders
                     ChangePictureMonster(game, pictureMonster);
                     progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
                 }
-                
-                progressBarMonsterHealth.Value = game.CurrentMonster.Health;
+                if (game.CurrentMonster.Health <= progressBarMonsterHealth.Maximum && game.CurrentMonster.Health >= progressBarMonsterHealth.Minimum)
+                    progressBarMonsterHealth.Value = game.CurrentMonster.Health;
             };
             timer.Start();
         }
