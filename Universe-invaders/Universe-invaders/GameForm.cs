@@ -195,9 +195,9 @@ namespace Universe_invaders
                     game.GameUpgrades[1].Price += Convert.ToInt32(game.GameUpgrades[1].MainPrice * 1.2);
                     ChangeUpgradePrice(buttonSecondUpgrade, game, 1);
                     game.GameUpgrades[1].IncreaseClickDamage +=
-                        Convert.ToInt32(game.GameUpgrades[1].IncreaseClickDamage * 1.1);
+                        Convert.ToInt32(game.GameUpgrades[1].IncreaseClickDamage * 1.05);
                     game.GameUpgrades[1].IncreaseAutoDamage +=
-                        Convert.ToInt32(game.GameUpgrades[1].IncreaseAutoDamage * 1.1);
+                        Convert.ToInt32(game.GameUpgrades[1].IncreaseAutoDamage * 1.05);
                 }
             };
             Controls.Add(buttonSecondUpgrade.button);
@@ -244,9 +244,9 @@ namespace Universe_invaders
                     game.GameUpgrades[2].Price += Convert.ToInt32(game.GameUpgrades[2].MainPrice * 1.3);
                     ChangeUpgradePrice(buttonThirdUpgrade, game, 2);
                     game.GameUpgrades[2].IncreaseClickDamage +=
-                        Convert.ToInt32(game.GameUpgrades[2].IncreaseClickDamage * 1.1);
+                        Convert.ToInt32(game.GameUpgrades[2].IncreaseClickDamage * 1.05);
                     game.GameUpgrades[2].IncreaseAutoDamage +=
-                        Convert.ToInt32(game.GameUpgrades[2].IncreaseAutoDamage * 1.1);
+                        Convert.ToInt32(game.GameUpgrades[2].IncreaseAutoDamage * 1.05);
                 }
             };
             Controls.Add(buttonThirdUpgrade.button);
@@ -293,9 +293,9 @@ namespace Universe_invaders
                     game.GameUpgrades[3].Price += Convert.ToInt32(game.GameUpgrades[3].MainPrice * 1.4);
                     ChangeUpgradePrice(buttonFourthUpgrade, game, 3);
                     game.GameUpgrades[3].IncreaseClickDamage +=
-                        Convert.ToInt32(game.GameUpgrades[3].IncreaseClickDamage * 1.1);
+                        Convert.ToInt32(game.GameUpgrades[3].IncreaseClickDamage * 1.02);
                     game.GameUpgrades[3].IncreaseAutoDamage +=
-                        Convert.ToInt32(game.GameUpgrades[3].IncreaseAutoDamage * 1.1);
+                        Convert.ToInt32(game.GameUpgrades[3].IncreaseAutoDamage * 1.02);
                 }
             };
             Controls.Add(buttonFourthUpgrade.button);
@@ -342,9 +342,9 @@ namespace Universe_invaders
                     game.GameUpgrades[4].Price += Convert.ToInt32(game.GameUpgrades[4].MainPrice * 1.5);
                     ChangeUpgradePrice(buttonFifthUpgrade, game, 4);
                     game.GameUpgrades[4].IncreaseClickDamage +=
-                        Convert.ToInt32(game.GameUpgrades[4].IncreaseClickDamage * 1.1);
+                        Convert.ToInt32(game.GameUpgrades[4].IncreaseClickDamage * 1.02);
                     game.GameUpgrades[4].IncreaseAutoDamage +=
-                        Convert.ToInt32(game.GameUpgrades[4].IncreaseAutoDamage * 1.1);
+                        Convert.ToInt32(game.GameUpgrades[4].IncreaseAutoDamage * 1.02);
                 }
             };
             Controls.Add(buttonFifthUpgrade.button);
