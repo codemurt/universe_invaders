@@ -14,6 +14,8 @@ namespace Universe_invaders
         public int HealthMin = 10;
         public int MoneyWinMin = 2;
         public Size clientSize;
+        public bool IsMenuMusicOff = false;
+        public bool IsGameMusicOff = false;
 
         public Game()
         {

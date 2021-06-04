@@ -19,7 +19,8 @@ namespace Universe_invaders
             ClientSize = Screen.FromControl(this).WorkingArea.Size;
             
             var sound = new SoundPlayer(@"..\..\Music\GameMusic2.wav");
-            sound.PlayLooping();
+            if (!game.IsGameMusicOff)
+                sound.PlayLooping();
 
             var buttonToMenu = new GameButton();
             buttonToMenu.button.Text = "menu";
@@ -48,7 +49,10 @@ namespace Universe_invaders
             Controls.Add(buttonHowToPlay.button);
 
             var buttonOfSound = new GameButton();
-            buttonOfSound.button.Text = "sound off";
+            if(!game.IsGameMusicOff)
+                buttonOfSound.button.Text = "sound off";
+            else
+                buttonOfSound.button.Text = "sound on";
             buttonOfSound.button.Location = new Point(50, ClientSize.Height - 50);
             buttonOfSound.button.Font = new Font("PlayMeGames", 35, FontStyle.Italic);
             buttonOfSound.button.Size = new Size(300, 75);
@@ -57,11 +61,13 @@ namespace Universe_invaders
             {
                 if (buttonOfSound.button.Text == "sound off")
                 {
+                    game.IsGameMusicOff = true;
                     sound.Stop();
                     buttonOfSound.button.Text = "sound on";
                 }
                 else
                 {
+                    game.IsGameMusicOff = false;
                     sound.PlayLooping();
                     buttonOfSound.button.Text = "sound off";
                 }
@@ -86,7 +92,7 @@ namespace Universe_invaders
             Controls.Add(damageClick);
             
             var increaseValueDamagePerClick = new Label();
-            increaseValueDamagePerClick.Size = new Size(280, 30);
+            increaseValueDamagePerClick.Size = new Size(100, 30);
             increaseValueDamagePerClick.Location = new Point(ClientSize.Width / 2 + 30, 25);
             increaseValueDamagePerClick.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
             increaseValueDamagePerClick.ForeColor = Color.Green;
@@ -101,7 +107,7 @@ namespace Universe_invaders
             Controls.Add(autoDamage);
             
             var increaseValueAutoDamage = new Label();
-            increaseValueAutoDamage.Size = new Size(280, 30);
+            increaseValueAutoDamage.Size = new Size(100, 30);
             increaseValueAutoDamage.Location = new Point(ClientSize.Width - 200, 25);
             increaseValueAutoDamage.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
             increaseValueAutoDamage.ForeColor = Color.Green;

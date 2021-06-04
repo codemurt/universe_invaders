@@ -24,7 +24,8 @@ namespace Universe_invaders
             game.clientSize = ClientSize;
             
             var sound = new SoundPlayer(@"..\..\Music\MenuMusic.wav");
-            sound.PlayLooping();
+            if (!game.IsMenuMusicOff)
+                sound.PlayLooping();
 
             var menuTitle = new Label();
             menuTitle.Text = "UNIVERSE\nINVADERS";
@@ -54,10 +55,36 @@ namespace Universe_invaders
                 Application.Exit();
             };
             buttonExit.button.Font = new Font("PlayMeGames", 45, FontStyle.Italic);
+            
+            var buttonOfSound = new GameButton();
+            if(!game.IsMenuMusicOff)
+                buttonOfSound.button.Text = "sound off";
+            else
+                buttonOfSound.button.Text = "sound on";
+            buttonOfSound.button.Location = new Point(ClientSize.Width - 320, ClientSize.Height - 55);
+            buttonOfSound.button.Font = new Font("PlayMeGames", 35, FontStyle.Italic);
+            buttonOfSound.button.Size = new Size(300, 75);
+
+            buttonOfSound.button.Click += (s, e) =>
+            {
+                if (buttonOfSound.button.Text == "sound off")
+                {
+                    game.IsMenuMusicOff = true;
+                    sound.Stop();
+                    buttonOfSound.button.Text = "sound on";
+                }
+                else
+                {
+                    game.IsMenuMusicOff = false;
+                    sound.PlayLooping();
+                    buttonOfSound.button.Text = "sound off";
+                }
+            };
 
             Controls.Add(menuTitle);
             Controls.Add(buttonStart.button);
             Controls.Add(buttonExit.button);
+            Controls.Add(buttonOfSound.button);
         }
     }
 }
