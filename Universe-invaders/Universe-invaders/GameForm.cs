@@ -85,14 +85,14 @@ namespace Universe_invaders
             
             var damageClick = new Label();
             damageClick.Text = "Damage Per Click: " + game.Player.DamageClick.ToString() + " p.";
-            damageClick.Size = new Size(380, 30);
+            damageClick.Size = new Size(420, 30);
             damageClick.Location = new Point(ClientSize.Width / 2 - 200, 50);
             damageClick.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             damageClick.ForeColor = Color.Teal;
             Controls.Add(damageClick);
             
             var increaseValueDamagePerClick = new Label();
-            increaseValueDamagePerClick.Size = new Size(100, 30);
+            increaseValueDamagePerClick.Size = new Size(140, 30);
             increaseValueDamagePerClick.Location = new Point(ClientSize.Width / 2 + 30, 25);
             increaseValueDamagePerClick.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
             increaseValueDamagePerClick.ForeColor = Color.Green;
@@ -100,14 +100,14 @@ namespace Universe_invaders
             
             var autoDamage = new Label();
             autoDamage.Text = "Auto Damage: " + game.Player.AutoDamage.ToString() + " p/sec.";
-            autoDamage.Size = new Size(400, 30);
+            autoDamage.Size = new Size(450, 30);
             autoDamage.Location = new Point(ClientSize.Width - 400, 50);
             autoDamage.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
             autoDamage.ForeColor = Color.Teal;
             Controls.Add(autoDamage);
             
             var increaseValueAutoDamage = new Label();
-            increaseValueAutoDamage.Size = new Size(100, 30);
+            increaseValueAutoDamage.Size = new Size(140, 30);
             increaseValueAutoDamage.Location = new Point(ClientSize.Width - 200, 25);
             increaseValueAutoDamage.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
             increaseValueAutoDamage.ForeColor = Color.Green;
@@ -345,7 +345,7 @@ namespace Universe_invaders
                     ChangeAutoDamage(autoDamage, game);
                     game.GameUpgrades[4].CountUpgrades++;
                     ChangeCountUpgrades(countFifthUpgrade, game, 4);
-                    game.GameUpgrades[4].Price += Convert.ToInt32(game.GameUpgrades[4].MainPrice * 1.5);
+                    game.GameUpgrades[4].Price += Convert.ToInt32(game.GameUpgrades[4].MainPrice * 1.6);
                     ChangeUpgradePrice(buttonFifthUpgrade, game, 4);
                     game.GameUpgrades[4].IncreaseClickDamage +=
                         Convert.ToInt32(game.GameUpgrades[4].IncreaseClickDamage * 1.02);
@@ -389,7 +389,7 @@ namespace Universe_invaders
                     money.Text = "Money: " + game.Player.Money + " $";
                     game.CurrentLevel++;
                     titleCurrentLevel.Text = "Level: " + game.CurrentLevel + "/50";
-                    game.HealthMin = Convert.ToInt32(game.HealthMin * 1.4);
+                    game.HealthMin = Convert.ToInt32(game.HealthMin * 1.45);
                     game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
                     
                     game.CurrentMonster = new Monster(GetNextMonster(), game.HealthMin, game.MoneyWinMin);
@@ -399,6 +399,7 @@ namespace Universe_invaders
                 
                 if (game.CurrentMonster.Health <= progressBarMonsterHealth.Maximum && game.CurrentMonster.Health >= progressBarMonsterHealth.Minimum)
                     progressBarMonsterHealth.Value = game.CurrentMonster.Health;
+                
             };
             
             var timer = new Timer();
@@ -413,7 +414,7 @@ namespace Universe_invaders
                     money.Text = "Money: " + game.Player.Money + " $";
                     game.CurrentLevel++;
                     titleCurrentLevel.Text = "Level: " + game.CurrentLevel + "/50";
-                    game.HealthMin = Convert.ToInt32(game.HealthMin * 1.4);
+                    game.HealthMin = Convert.ToInt32(game.HealthMin * 1.45);
                     game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
                     game.CurrentMonster = new Monster(GetNextMonster(), game.HealthMin, game.MoneyWinMin);
                     ChangePictureMonster(game, pictureMonster);
@@ -421,6 +422,19 @@ namespace Universe_invaders
                 }
                 if (game.CurrentMonster.Health <= progressBarMonsterHealth.Maximum && game.CurrentMonster.Health >= progressBarMonsterHealth.Minimum)
                     progressBarMonsterHealth.Value = game.CurrentMonster.Health;
+                
+                if (game.CurrentLevel >= 50)
+                {
+                    timer.Stop();
+                    MessageBox.Show("Поздравляем, вы победили! Вашей армии удалось победить всех монстров!");
+                    sound.Stop();
+                    var newGame = new Game();
+                    newGame.IsMenuMusicOff = game.IsMenuMusicOff;
+                    newGame.IsGameMusicOff = game.IsGameMusicOff;
+                    var menuForm = new MenuForm(newGame);
+                    menuForm.Show();
+                    this.Close();
+                }
             };
             timer.Start();
         }
