@@ -7,8 +7,6 @@ namespace Universe_invaders
 {
     public partial class GameForm : Form
     {
-        SoundPlayer soundOfHit = new SoundPlayer(@"..\..\Music\SoundOfHit.wav");
-        
         public GameForm(Game game)
         {
             InitializeComponent();
@@ -378,6 +376,8 @@ namespace Universe_invaders
             progressBarMonsterHealth.Maximum = game.HealthMin;
             progressBarMonsterHealth.Value = game.CurrentMonster.Health;
             Controls.Add(progressBarMonsterHealth);
+
+
             
             pictureMonster.Click += (s, e) =>
             {
