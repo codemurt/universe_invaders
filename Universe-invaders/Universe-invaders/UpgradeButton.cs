@@ -11,8 +11,6 @@ namespace Universe_invaders
         public UpgradeButton(GameUpgrade gameUpgrade, Label increaseValueDamagePerClick, Label increaseValueAutoDamage)
         {
             var colorBlue = ColorTranslator.FromHtml("#D3E0EA");
-            var colorGreen = ColorTranslator.FromHtml("#276678");
-            var colorGreenDark = ColorTranslator.FromHtml("#02475e");
             
             button.BackColor = colorBlue;
             button.FlatStyle = FlatStyle.Flat;
