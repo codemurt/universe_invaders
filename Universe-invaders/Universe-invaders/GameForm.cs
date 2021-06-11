@@ -377,8 +377,6 @@ namespace Universe_invaders
             progressBarMonsterHealth.Value = game.CurrentMonster.Health;
             Controls.Add(progressBarMonsterHealth);
 
-
-            
             pictureMonster.Click += (s, e) =>
             {
                 if (game.CurrentMonster.Health - game.Player.DamageClick > 0)
@@ -392,7 +390,7 @@ namespace Universe_invaders
                     game.HealthMin = Convert.ToInt32(game.HealthMin * 1.45);
                     game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
                     
-                    game.CurrentMonster = new Monster(GetNextMonster(), game.HealthMin, game.MoneyWinMin);
+                    game.CurrentMonster = new Monster(Game.GetNextMonsterName(), game.HealthMin, game.MoneyWinMin);
                     ChangePictureMonster(game, pictureMonster);
                     progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
                 }
@@ -416,7 +414,7 @@ namespace Universe_invaders
                     titleCurrentLevel.Text = "Level: " + game.CurrentLevel + "/50";
                     game.HealthMin = Convert.ToInt32(game.HealthMin * 1.45);
                     game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
-                    game.CurrentMonster = new Monster(GetNextMonster(), game.HealthMin, game.MoneyWinMin);
+                    game.CurrentMonster = new Monster(Game.GetNextMonsterName(), game.HealthMin, game.MoneyWinMin);
                     ChangePictureMonster(game, pictureMonster);
                     progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
                 }
@@ -437,14 +435,6 @@ namespace Universe_invaders
                 }
             };
             timer.Start();
-        }
-
-        private string GetNextMonster()
-        {
-            var rnd = new Random();
-            var numberOfNextMonster = rnd.Next() % 2;
-
-            return numberOfNextMonster == 0 ? "OrangeMonster" : "BlueMonster";
         }
 
         protected override void OnPaint(PaintEventArgs e)

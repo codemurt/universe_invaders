@@ -28,16 +28,30 @@ namespace Universe_invaders
             GameUpgrades.Add(new GameUpgrade("Space explorers", 5000, 500, 1000));
 
             CurrentLevel = 1;
+            
+            CurrentMonster = new Monster(GetNextMonsterName(), 10, 2);
+        }
 
+        public static string GetNextMonsterName()
+        {
             string nextMonsterName = null;
             var rnd = new Random();
-            var numberOfNextMonster = rnd.Next() % 2;
-            if (numberOfNextMonster == 0)
-                nextMonsterName = "OrangeMonster";
-            else
-                nextMonsterName = "BlueMonster";
-            
-            CurrentMonster = new Monster(nextMonsterName, 10, 2);
+            var numberOfNextMonster = rnd.Next() % 3;
+
+            switch (numberOfNextMonster)
+            {
+                case 0:
+                    nextMonsterName = "OrangeMonster";
+                    break;
+                case 1:
+                    nextMonsterName = "BlueMonster";
+                    break;
+                case 2:
+                    nextMonsterName = "PurpleMonster";
+                    break;
+            }
+
+            return nextMonsterName;
         }
     }
 }
