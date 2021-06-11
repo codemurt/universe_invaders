@@ -111,12 +111,7 @@ namespace Universe_invaders
             increaseValueAutoDamage.ForeColor = Color.Green;
             Controls.Add(increaseValueAutoDamage);
 
-            var picturePurpleSoldier = new PictureBox();
-            picturePurpleSoldier.Image = Image.FromFile
-                (@"..\..\Images\PurpleSoldier.png");
-            picturePurpleSoldier.SizeMode = PictureBoxSizeMode.StretchImage;
-            picturePurpleSoldier.Location = new Point(70, 120); 
-            picturePurpleSoldier.Size = new Size(90, 88);
+            var picturePurpleSoldier = GetUpgradePicture(@"..\..\Images\PurpleSoldier.png", 70, 120);
             Controls.Add(picturePurpleSoldier);
             
             var titleFirstUpgrade = new Label();
@@ -142,12 +137,7 @@ namespace Universe_invaders
                 TryUpgrade(game, money, damageClick, autoDamage, countFirstUpgrade, buttonFirstUpgrade, 0, 1.1, 1.1);
             Controls.Add(buttonFirstUpgrade.button);
             
-            var pictureTheRifleman = new PictureBox();
-            pictureTheRifleman.Image = Image.FromFile
-                (@"..\..\Images\TheRifleman.png");
-            pictureTheRifleman.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureTheRifleman.Location = new Point(70, 230);
-            pictureTheRifleman.Size = new Size(90, 88);
+            var pictureTheRifleman = GetUpgradePicture(@"..\..\Images\TheRifleman.png", 70, 230);
             Controls.Add(pictureTheRifleman);
             
             var titleSecondUpgrade = new Label();
@@ -173,12 +163,7 @@ namespace Universe_invaders
                 TryUpgrade(game, money, damageClick, autoDamage, countSecondUpgrade, buttonSecondUpgrade, 1, 1.2, 1.05);
             Controls.Add(buttonSecondUpgrade.button);
             
-            var pictureRobot = new PictureBox();
-            pictureRobot.Image = Image.FromFile
-                (@"..\..\Images\Robot.png");
-            pictureRobot.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureRobot.Location = new Point(70, 340);
-            pictureRobot.Size = new Size(90, 88);
+            var pictureRobot = GetUpgradePicture(@"..\..\Images\Robot.png", 70, 340);
             Controls.Add(pictureRobot);
             
             var titleThirdUpgrade = new Label();
@@ -204,12 +189,7 @@ namespace Universe_invaders
                 TryUpgrade(game, money, damageClick, autoDamage, countThirdUpgrade, buttonThirdUpgrade, 2, 1.3, 1.02);
             Controls.Add(buttonThirdUpgrade.button);
             
-            var pictureSpaceshipCrew = new PictureBox();
-            pictureSpaceshipCrew.Image = Image.FromFile
-                (@"..\..\Images\SpaceshipCrew.png");
-            pictureSpaceshipCrew.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureSpaceshipCrew.Location = new Point(70, 450);
-            pictureSpaceshipCrew.Size = new Size(90, 88);
+            var pictureSpaceshipCrew = GetUpgradePicture(@"..\..\Images\SpaceshipCrew.png", 70, 450);
             Controls.Add(pictureSpaceshipCrew);
             
             var titleFourthUpgrade = new Label();
@@ -235,12 +215,7 @@ namespace Universe_invaders
                 TryUpgrade(game, money, damageClick, autoDamage, countFourthUpgrade, buttonFourthUpgrade, 3, 1.4, 1.02);
             Controls.Add(buttonFourthUpgrade.button);
             
-            var pictureSpaceExplorers = new PictureBox();
-            pictureSpaceExplorers.Image = Image.FromFile
-                (@"..\..\Images\SpaceExplorers.png");
-            pictureSpaceExplorers.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureSpaceExplorers.Location = new Point(70, 560);
-            pictureSpaceExplorers.Size = new Size(90, 88);
+            var pictureSpaceExplorers = GetUpgradePicture(@"..\..\Images\SpaceExplorers.png", 70, 560);
             Controls.Add(pictureSpaceExplorers);
             
             var titleFifthUpgrade = new Label();
@@ -315,6 +290,17 @@ namespace Universe_invaders
             timer.Start();
         }
 
+        private static PictureBox GetUpgradePicture(string path, int x, int y)
+        {
+            var pictureUpgrade = new PictureBox();
+            pictureUpgrade.Image = Image.FromFile(path);
+            pictureUpgrade.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureUpgrade.Location = new Point(x, y); 
+            pictureUpgrade.Size = new Size(90, 88);
+
+            return pictureUpgrade;
+        }
+
         private void BitCurrentMonster(Game game, Label money, Label titleCurrentLevel, PictureBox pictureMonster,
             ProgressBar progressBarMonsterHealth)
         {
@@ -352,10 +338,10 @@ namespace Universe_invaders
                 ChangeAutoDamage(autoDamage, game);
                 game.GameUpgrades[index].CountUpgrades++;
                 ChangeCountUpgrades(countSecondUpgrade, game, index);
-                game.GameUpgrades[index].Price += Convert.ToInt32(game.GameUpgrades[index].MainPrice * priceCoefficient); // 1.2
+                game.GameUpgrades[index].Price += Convert.ToInt32(game.GameUpgrades[index].MainPrice * priceCoefficient);
                 ChangeUpgradePrice(buttonSecondUpgrade, game, index);
                 game.GameUpgrades[index].IncreaseClickDamage +=
-                    Convert.ToInt32(game.GameUpgrades[index].IncreaseClickDamage * damageCoefficient); // 1.05
+                    Convert.ToInt32(game.GameUpgrades[index].IncreaseClickDamage * damageCoefficient);
                 if (index > 0)
                     game.GameUpgrades[index].IncreaseAutoDamage +=
                         Convert.ToInt32(game.GameUpgrades[index].IncreaseAutoDamage * damageCoefficient);
