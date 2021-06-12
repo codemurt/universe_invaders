@@ -88,7 +88,7 @@ namespace Universe_invaders
             Controls.Add(increaseValueDamagePerClick);
             
             var autoDamage = new Label();
-            autoDamage.Text = "Auto Damage: " + game.Player.AutoDamage.ToString() + " p/sec.";
+            autoDamage.Text = "Auto Damage: " + game.Player.AutoDamage + " p/sec.";
             autoDamage.Size = new Size(450, 30);
             autoDamage.Location = new Point(ClientSize.Width - 400, 50);
             autoDamage.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
@@ -141,7 +141,7 @@ namespace Universe_invaders
             
             var buttonThirdUpgrade = GetButtonUpgrade(game, 2, increaseValueDamagePerClick, increaseValueAutoDamage, 340);
             buttonThirdUpgrade.button.Click += (s, e) =>
-                TryUpgrade(game, money, damageClick, autoDamage, countThirdUpgrade, buttonThirdUpgrade, 2, 1.3, 1.02);
+                TryUpgrade(game, money, damageClick, autoDamage, countThirdUpgrade, buttonThirdUpgrade, 2, 1.4, 1.01);
             Controls.Add(buttonThirdUpgrade.button);
             
             var pictureSpaceshipCrew = GetUpgradePicture(@"..\..\Images\SpaceshipCrew.png", 70, 450);
@@ -197,13 +197,13 @@ namespace Universe_invaders
             Controls.Add(progressBarMonsterHealth);
 
             pictureMonster.Click += (s, e) =>
-                BitCurrentMonster(game, money, titleCurrentLevel, pictureMonster, progressBarMonsterHealth);
+                BitCurrentMonster(game, money, titleCurrentLevel, pictureMonster, progressBarMonsterHealth, false);
 
             var timer = new Timer();
             timer.Interval = 1000;
             timer.Tick += (s, e) =>
             {
-                BitCurrentMonster(game, money, titleCurrentLevel, pictureMonster, progressBarMonsterHealth);
+                BitCurrentMonster(game, money, titleCurrentLevel, pictureMonster, progressBarMonsterHealth, true);
                 
                 if (game.CurrentLevel >= 50)
                 {
@@ -266,26 +266,41 @@ namespace Universe_invaders
         }
 
         private void BitCurrentMonster(Game game, Label money, Label titleCurrentLevel, PictureBox pictureMonster,
-            ProgressBar progressBarMonsterHealth)
+            ProgressBar progressBarMonsterHealth, bool isAutoDamage)
         {
-            if (game.CurrentMonster.Health - game.Player.DamageClick > 0)
-                game.CurrentMonster.Health -= game.Player.DamageClick;
+            var damage = game.Player.DamageClick;
+            if (isAutoDamage)
+                damage = game.Player.AutoDamage;
+            
+            if (game.CurrentMonster.Health - damage > 0)
+                game.CurrentMonster.Health -= damage;
             else
             {
                 game.Player.Money += game.CurrentMonster.MoneyWin;
                 money.Text = "Money: " + game.Player.Money + " $";
                 game.CurrentLevel++;
                 titleCurrentLevel.Text = "Level: " + game.CurrentLevel + "/50";
-                game.HealthMin = Convert.ToInt32(game.HealthMin * 1.45);
-                game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
+                if (game.HealthMin * 1.45 < 0 || game.HealthMin * 1.45 >= Int32.MaxValue)
+                    game.HealthMin = Int32.MaxValue - 1;
+                else
+                    game.HealthMin = Convert.ToInt32(game.HealthMin * 1.45);
+                
+                if (game.MoneyWinMin * 1.3 < 0 || game.MoneyWinMin * 1.3 >= Int32.MaxValue)
+                    game.MoneyWinMin = Int32.MaxValue - 1;
+                else
+                    game.MoneyWinMin = Convert.ToInt32(game.MoneyWinMin * 1.3);
 
                 game.CurrentMonster = new Monster(Game.GetNextMonsterName(), game.HealthMin, game.MoneyWinMin);
                 ChangePictureMonster(game, pictureMonster);
-                progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
+                if (game.CurrentMonster.Health >= Int32.MaxValue)
+                    progressBarMonsterHealth.Maximum = Int32.MaxValue - 1;
+                else
+                    progressBarMonsterHealth.Maximum = game.CurrentMonster.Health;
             }
 
             if (game.CurrentMonster.Health <= progressBarMonsterHealth.Maximum &&
-                game.CurrentMonster.Health >= progressBarMonsterHealth.Minimum)
+                game.CurrentMonster.Health >= progressBarMonsterHealth.Minimum && 
+                game.CurrentMonster.Health < Int32.MaxValue)
                 progressBarMonsterHealth.Value = game.CurrentMonster.Health;
         }
 
@@ -296,19 +311,40 @@ namespace Universe_invaders
             {
                 game.Player.Money -= game.GameUpgrades[index].Price;
                 ChangeMoneyStatus(money, game);
-                game.Player.DamageClick += game.GameUpgrades[index].IncreaseClickDamage;
+                if (game.Player.DamageClick + game.GameUpgrades[index].IncreaseClickDamage < 0
+                    || game.Player.DamageClick + game.GameUpgrades[index].IncreaseClickDamage >= Int32.MaxValue - 5)
+                    game.Player.DamageClick = Int32.MaxValue - 1;
+                else
+                    game.Player.DamageClick += game.GameUpgrades[index].IncreaseClickDamage;
                 ChangeDamageClick(damageClick, game);
-                game.Player.AutoDamage += game.GameUpgrades[index].IncreaseAutoDamage;
+                if (game.Player.AutoDamage + game.GameUpgrades[index].IncreaseAutoDamage < 0
+                    || game.Player.AutoDamage + game.GameUpgrades[index].IncreaseAutoDamage >= Int32.MaxValue - 5)
+                    game.Player.AutoDamage = Int32.MaxValue - 1;
+                else
+                    game.Player.AutoDamage += game.GameUpgrades[index].IncreaseAutoDamage;
                 ChangeAutoDamage(autoDamage, game);
                 game.GameUpgrades[index].CountUpgrades++;
                 ChangeCountUpgrades(countSecondUpgrade, game, index);
                 game.GameUpgrades[index].Price += Convert.ToInt32(game.GameUpgrades[index].MainPrice * priceCoefficient);
                 ChangeUpgradePrice(buttonSecondUpgrade, game, index);
-                game.GameUpgrades[index].IncreaseClickDamage +=
-                    Convert.ToInt32(game.GameUpgrades[index].IncreaseClickDamage * damageCoefficient);
+
+                if (game.GameUpgrades[index].IncreaseClickDamage + game.GameUpgrades[index].IncreaseClickDamage * damageCoefficient < 0
+                    || game.GameUpgrades[index].IncreaseClickDamage + game.GameUpgrades[index].IncreaseClickDamage 
+                    * damageCoefficient >= Int32.MaxValue - 5)
+                    game.GameUpgrades[index].IncreaseClickDamage = Int32.MaxValue - 1;
+                else
+                    game.GameUpgrades[index].IncreaseClickDamage +=
+                        Convert.ToInt32(game.GameUpgrades[index].IncreaseClickDamage * damageCoefficient);
                 if (index > 0)
-                    game.GameUpgrades[index].IncreaseAutoDamage +=
-                        Convert.ToInt32(game.GameUpgrades[index].IncreaseAutoDamage * damageCoefficient);
+                {
+                    if (game.GameUpgrades[index].IncreaseAutoDamage + game.GameUpgrades[index].IncreaseAutoDamage * damageCoefficient < 0
+                        || game.GameUpgrades[index].IncreaseAutoDamage + game.GameUpgrades[index].IncreaseAutoDamage 
+                        * damageCoefficient >= Int32.MaxValue - 5)
+                        game.GameUpgrades[index].IncreaseAutoDamage = Int32.MaxValue - 1;
+                    else
+                        game.GameUpgrades[index].IncreaseAutoDamage +=
+                            Convert.ToInt32(game.GameUpgrades[index].IncreaseAutoDamage * damageCoefficient);
+                }
             }
         }
 

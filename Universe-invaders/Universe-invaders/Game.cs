@@ -36,9 +36,8 @@ namespace Universe_invaders
         {
             var listMonsters = new List<string> {"OrangeMonster", "BlueMonster", "PurpleMonster"};
             var rnd = new Random();
-            var numberOfNextMonster = rnd.Next() % listMonsters.Count;
 
-            return listMonsters[numberOfNextMonster];
+            return listMonsters[rnd.Next() % listMonsters.Count];
         }
     }
 }
