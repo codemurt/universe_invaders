@@ -20,9 +20,7 @@ namespace Universe_invaders
             if (!game.IsGameMusicOff)
                 sound.PlayLooping();
 
-            var buttonToMenu = new GameButton();
-            buttonToMenu.button.Text = "menu";
-            buttonToMenu.button.Location = new Point(ClientSize.Width - 375, ClientSize.Height - 55);
+            var buttonToMenu = new GameButton("menu", ClientSize.Width - 375, ClientSize.Height - 55, 45);
             buttonToMenu.button.Click += (s, e) =>
             {
                 sound.Stop();
@@ -30,12 +28,8 @@ namespace Universe_invaders
                 menuForm.Show();
                 this.Close();
             };
-            buttonToMenu.button.Font = new Font("PlayMeGames", 45, FontStyle.Italic);
 
-            var buttonHowToPlay = new GameButton();
-            buttonHowToPlay.button.Text = "How to play";
-            buttonHowToPlay.button.Location = new Point(ClientSize.Width - 375 - 355, ClientSize.Height - 55);
-            buttonHowToPlay.button.Font = new Font("PlayMeGames", 35, FontStyle.Italic);
+            var buttonHowToPlay = new GameButton("How to play", ClientSize.Width - 375 - 355, ClientSize.Height - 55, 35);
             buttonHowToPlay.button.Click += (s, e) =>
             {
                 MessageBox.Show("Твоя цель пройти 50 уровней. Для этого тебе нужно прокачивать свою армию. " +
@@ -46,15 +40,12 @@ namespace Universe_invaders
             Controls.Add(buttonToMenu.button);
             Controls.Add(buttonHowToPlay.button);
 
-            var buttonOfSound = new GameButton();
+            var buttonOfSound = new GameButton("sound off", 50, ClientSize.Height - 50, 35);
             if(!game.IsGameMusicOff)
                 buttonOfSound.button.Text = "sound off";
             else
                 buttonOfSound.button.Text = "sound on";
-            buttonOfSound.button.Location = new Point(50, ClientSize.Height - 50);
-            buttonOfSound.button.Font = new Font("PlayMeGames", 35, FontStyle.Italic);
             buttonOfSound.button.Size = new Size(300, 75);
-
             buttonOfSound.button.Click += (s, e) =>
             {
                 if (buttonOfSound.button.Text == "sound off")

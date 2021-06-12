@@ -34,10 +34,7 @@ namespace Universe_invaders
             menuTitle.Font = new Font("PlayMeGames", 135, FontStyle.Italic);
             menuTitle.ForeColor = Color.Teal;
 
-            var buttonStart = new GameButton();
-            buttonStart.button.Text = "start";
-            buttonStart.button.Location = new Point(ClientSize.Width / 2 - 175, ClientSize.Height / 2 + 150);
-            buttonStart.button.Font = new Font("PlayMeGames", 45, FontStyle.Italic);
+            var buttonStart = new GameButton("start", ClientSize.Width / 2 - 175, ClientSize.Height / 2 + 150, 45);
             buttonStart.button.Click += (s, e) =>
             {
                 sound.Stop();
@@ -46,23 +43,18 @@ namespace Universe_invaders
                 this.Hide();
             };
 
-            var buttonExit = new GameButton();
-            buttonExit.button.Text = "exit";
-            buttonExit.button.Location = new Point(ClientSize.Width / 2 - 175, buttonStart.button.Bottom + 10);
+            var buttonExit = new GameButton("exit", ClientSize.Width / 2 - 175, buttonStart.button.Bottom + 10, 45);
             buttonExit.button.Click += (s, e) =>
             {
                 sound.Stop();
                 Application.Exit();
             };
-            buttonExit.button.Font = new Font("PlayMeGames", 45, FontStyle.Italic);
-            
-            var buttonOfSound = new GameButton();
+
+            var buttonOfSound = new GameButton("sound off", ClientSize.Width - 320, ClientSize.Height - 55, 35);
             if(!game.IsMenuMusicOff)
                 buttonOfSound.button.Text = "sound off";
             else
                 buttonOfSound.button.Text = "sound on";
-            buttonOfSound.button.Location = new Point(ClientSize.Width - 320, ClientSize.Height - 55);
-            buttonOfSound.button.Font = new Font("PlayMeGames", 35, FontStyle.Italic);
             buttonOfSound.button.Size = new Size(300, 75);
 
             buttonOfSound.button.Click += (s, e) =>
