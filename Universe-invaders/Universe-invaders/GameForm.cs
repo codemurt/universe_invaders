@@ -113,7 +113,7 @@ namespace Universe_invaders
             
             var buttonFirstUpgrade = GetButtonUpgrade(game, 0, increaseValueDamagePerClick, increaseValueAutoDamage, 120);
             buttonFirstUpgrade.button.Click += (s, e) =>
-                TryUpgrade(game, money, damageClick, autoDamage, countFirstUpgrade, buttonFirstUpgrade, 0, 1.1, 1.1);
+                TryUpgrade(game, money, damageClick, autoDamage, countFirstUpgrade, buttonFirstUpgrade, 0, 1.3, 1.01);
             Controls.Add(buttonFirstUpgrade.button);
             
             var pictureTheRifleman = GetUpgradePicture(@"..\..\Images\TheRifleman.png", 70, 230);
@@ -127,7 +127,7 @@ namespace Universe_invaders
             
             var buttonSecondUpgrade = GetButtonUpgrade(game, 1, increaseValueDamagePerClick, increaseValueAutoDamage, 230);
             buttonSecondUpgrade.button.Click += (sender, args) => 
-                TryUpgrade(game, money, damageClick, autoDamage, countSecondUpgrade, buttonSecondUpgrade, 1, 1.2, 1.05);
+                TryUpgrade(game, money, damageClick, autoDamage, countSecondUpgrade, buttonSecondUpgrade, 1, 1.4, 1.01);
             Controls.Add(buttonSecondUpgrade.button);
             
             var pictureRobot = GetUpgradePicture(@"..\..\Images\Robot.png", 70, 340);
@@ -155,7 +155,7 @@ namespace Universe_invaders
             
             var buttonFourthUpgrade = GetButtonUpgrade(game, 3, increaseValueDamagePerClick, increaseValueAutoDamage, 450);
             buttonFourthUpgrade.button.Click += (s, e) =>
-                TryUpgrade(game, money, damageClick, autoDamage, countFourthUpgrade, buttonFourthUpgrade, 3, 1.4, 1.02);
+                TryUpgrade(game, money, damageClick, autoDamage, countFourthUpgrade, buttonFourthUpgrade, 3, 1.6, 1.02);
             Controls.Add(buttonFourthUpgrade.button);
             
             var pictureSpaceExplorers = GetUpgradePicture(@"..\..\Images\SpaceExplorers.png", 70, 560);
@@ -169,7 +169,7 @@ namespace Universe_invaders
             
             var buttonFifthUpgrade = GetButtonUpgrade(game, 4, increaseValueDamagePerClick, increaseValueAutoDamage, 560);
             buttonFifthUpgrade.button.Click += (s, e) =>
-                TryUpgrade(game, money, damageClick, autoDamage, countFifthUpgrade, buttonFifthUpgrade, 4, 1.6, 1.02);
+                TryUpgrade(game, money, damageClick, autoDamage, countFifthUpgrade, buttonFifthUpgrade, 4, 1.6, 1.025);
             Controls.Add(buttonFifthUpgrade.button);
             
             var titleCurrentLevel = new Label();
