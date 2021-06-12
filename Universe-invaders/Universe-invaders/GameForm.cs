@@ -114,51 +114,27 @@ namespace Universe_invaders
             var picturePurpleSoldier = GetUpgradePicture(@"..\..\Images\PurpleSoldier.png", 70, 120);
             Controls.Add(picturePurpleSoldier);
             
-            var titleFirstUpgrade = new Label();
-            titleFirstUpgrade.Text = "Simple\nsoldier";
-            titleFirstUpgrade.Size = new Size(100, 70);
-            titleFirstUpgrade.Location = new Point(165, 130);
-            titleFirstUpgrade.Font = new Font("PlayMeGames", 22, FontStyle.Italic);
-            titleFirstUpgrade.ForeColor = Color.Teal;
+            var titleFirstUpgrade = GetTitleUpgrade("Simple\nsoldier", 100, 70, 165, 130, 22);
             Controls.Add(titleFirstUpgrade);
             
-            var countFirstUpgrade = new Label();
-            countFirstUpgrade.Text = game.GameUpgrades[0].CountUpgrades.ToString() + "x";
-            countFirstUpgrade.Size = new Size(65, 30);
-            countFirstUpgrade.Location = new Point(285, 150);
-            countFirstUpgrade.Font = titleFirstUpgrade.Font;
-            countFirstUpgrade.ForeColor = Color.Teal;
+            var countFirstUpgrade = GetCountUpgrade(game, 0,  150);
             Controls.Add(countFirstUpgrade);
             
-            var buttonFirstUpgrade = new UpgradeButton(game.GameUpgrades[0], increaseValueDamagePerClick, increaseValueAutoDamage);
-            buttonFirstUpgrade.button.Text = game.GameUpgrades[0].Price + "$";
-            buttonFirstUpgrade.button.Location = new Point(350, 120);
+            var buttonFirstUpgrade = GetButtonUpgrade(game, 0, increaseValueDamagePerClick, increaseValueAutoDamage, 120);
             buttonFirstUpgrade.button.Click += (s, e) =>
                 TryUpgrade(game, money, damageClick, autoDamage, countFirstUpgrade, buttonFirstUpgrade, 0, 1.1, 1.1);
             Controls.Add(buttonFirstUpgrade.button);
             
             var pictureTheRifleman = GetUpgradePicture(@"..\..\Images\TheRifleman.png", 70, 230);
             Controls.Add(pictureTheRifleman);
-            
-            var titleSecondUpgrade = new Label();
-            titleSecondUpgrade.Text = "The\nRifleman";
-            titleSecondUpgrade.Size = new Size(120, 65);
-            titleSecondUpgrade.Location = new Point(170, 250);
-            titleSecondUpgrade.Font = new Font("PlayMeGames", 18, FontStyle.Italic);
-            titleSecondUpgrade.ForeColor = Color.Teal;
+
+            var titleSecondUpgrade = GetTitleUpgrade("The\nRifleman", 120, 65, 170, 250, 18);
             Controls.Add(titleSecondUpgrade);
 
-            var countSecondUpgrade = new Label();
-            countSecondUpgrade.Text = game.GameUpgrades[1].CountUpgrades + "x";
-            countSecondUpgrade.Size = new Size(65, 30);
-            countSecondUpgrade.Location = new Point(285, 260);
-            countSecondUpgrade.Font = titleFirstUpgrade.Font;
-            countSecondUpgrade.ForeColor = Color.Teal;
+            var countSecondUpgrade = GetCountUpgrade(game, 1,  260);
             Controls.Add(countSecondUpgrade);
             
-            var buttonSecondUpgrade = new UpgradeButton(game.GameUpgrades[1], increaseValueDamagePerClick, increaseValueAutoDamage);
-            buttonSecondUpgrade.button.Text = game.GameUpgrades[1].Price + "$";
-            buttonSecondUpgrade.button.Location = new Point(350, 230);
+            var buttonSecondUpgrade = GetButtonUpgrade(game, 1, increaseValueDamagePerClick, increaseValueAutoDamage, 230);
             buttonSecondUpgrade.button.Click += (sender, args) => 
                 TryUpgrade(game, money, damageClick, autoDamage, countSecondUpgrade, buttonSecondUpgrade, 1, 1.2, 1.05);
             Controls.Add(buttonSecondUpgrade.button);
@@ -166,25 +142,13 @@ namespace Universe_invaders
             var pictureRobot = GetUpgradePicture(@"..\..\Images\Robot.png", 70, 340);
             Controls.Add(pictureRobot);
             
-            var titleThirdUpgrade = new Label();
-            titleThirdUpgrade.Text = "Robot";
-            titleThirdUpgrade.Size = new Size(120, 30);
-            titleThirdUpgrade.Location = new Point(170, 375);
-            titleThirdUpgrade.Font = new Font("PlayMeGames", 25, FontStyle.Italic);
-            titleThirdUpgrade.ForeColor = Color.Teal;
+            var titleThirdUpgrade = GetTitleUpgrade("Robot", 120, 30, 170, 375, 25);
             Controls.Add(titleThirdUpgrade);
             
-            var countThirdUpgrade = new Label();
-            countThirdUpgrade.Text = game.GameUpgrades[2].CountUpgrades + "x";
-            countThirdUpgrade.Size = new Size(65, 30);
-            countThirdUpgrade.Location = new Point(285, 380);
-            countThirdUpgrade.Font = titleFirstUpgrade.Font;
-            countThirdUpgrade.ForeColor = Color.Teal;
+            var countThirdUpgrade = GetCountUpgrade(game, 2, 380);
             Controls.Add(countThirdUpgrade);
             
-            var buttonThirdUpgrade = new UpgradeButton(game.GameUpgrades[2], increaseValueDamagePerClick, increaseValueAutoDamage);
-            buttonThirdUpgrade.button.Text = game.GameUpgrades[2].Price + "$";
-            buttonThirdUpgrade.button.Location = new Point(350, 340);
+            var buttonThirdUpgrade = GetButtonUpgrade(game, 2, increaseValueDamagePerClick, increaseValueAutoDamage, 340);
             buttonThirdUpgrade.button.Click += (s, e) =>
                 TryUpgrade(game, money, damageClick, autoDamage, countThirdUpgrade, buttonThirdUpgrade, 2, 1.3, 1.02);
             Controls.Add(buttonThirdUpgrade.button);
@@ -192,25 +156,13 @@ namespace Universe_invaders
             var pictureSpaceshipCrew = GetUpgradePicture(@"..\..\Images\SpaceshipCrew.png", 70, 450);
             Controls.Add(pictureSpaceshipCrew);
             
-            var titleFourthUpgrade = new Label();
-            titleFourthUpgrade.Text = "Spaceship\ncrew";
-            titleFourthUpgrade.Size = new Size(120, 55);
-            titleFourthUpgrade.Location = new Point(170, 475);
-            titleFourthUpgrade.Font = new Font("PlayMeGames", 18, FontStyle.Italic);
-            titleFourthUpgrade.ForeColor = Color.Teal;
+            var titleFourthUpgrade = GetTitleUpgrade("Spaceship\ncrew", 120, 55, 170, 475, 18);
             Controls.Add(titleFourthUpgrade);
             
-            var countFourthUpgrade = new Label();
-            countFourthUpgrade.Text = game.GameUpgrades[3].CountUpgrades + "x";
-            countFourthUpgrade.Size = new Size(65, 30);
-            countFourthUpgrade.Location = new Point(285, 485);
-            countFourthUpgrade.Font = titleFirstUpgrade.Font;
-            countFourthUpgrade.ForeColor = Color.Teal;
+            var countFourthUpgrade = GetCountUpgrade(game, 3, 485);
             Controls.Add(countFourthUpgrade);
             
-            var buttonFourthUpgrade = new UpgradeButton(game.GameUpgrades[3], increaseValueDamagePerClick, increaseValueAutoDamage);
-            buttonFourthUpgrade.button.Text = game.GameUpgrades[3].Price + "$";
-            buttonFourthUpgrade.button.Location = new Point(350, 450);
+            var buttonFourthUpgrade = GetButtonUpgrade(game, 3, increaseValueDamagePerClick, increaseValueAutoDamage, 450);
             buttonFourthUpgrade.button.Click += (s, e) =>
                 TryUpgrade(game, money, damageClick, autoDamage, countFourthUpgrade, buttonFourthUpgrade, 3, 1.4, 1.02);
             Controls.Add(buttonFourthUpgrade.button);
@@ -218,25 +170,13 @@ namespace Universe_invaders
             var pictureSpaceExplorers = GetUpgradePicture(@"..\..\Images\SpaceExplorers.png", 70, 560);
             Controls.Add(pictureSpaceExplorers);
             
-            var titleFifthUpgrade = new Label();
-            titleFifthUpgrade.Text = "Space\nexplorers";
-            titleFifthUpgrade.Size = new Size(120, 55);
-            titleFifthUpgrade.Location = new Point(170, 580);
-            titleFifthUpgrade.Font = new Font("PlayMeGames", 20, FontStyle.Italic);
-            titleFifthUpgrade.ForeColor = Color.Teal;
+            var titleFifthUpgrade = GetTitleUpgrade("Space\nexplorers", 120, 55, 170, 580, 20);
             Controls.Add(titleFifthUpgrade);
             
-            var countFifthUpgrade = new Label();
-            countFifthUpgrade.Text = game.GameUpgrades[4].CountUpgrades + "x";
-            countFifthUpgrade.Size = new Size(65, 30);
-            countFifthUpgrade.Location = new Point(285, 590);
-            countFifthUpgrade.Font = titleFirstUpgrade.Font;
-            countFifthUpgrade.ForeColor = Color.Teal;
+            var countFifthUpgrade = GetCountUpgrade(game, 4,  590);
             Controls.Add(countFifthUpgrade);
             
-            var buttonFifthUpgrade = new UpgradeButton(game.GameUpgrades[4], increaseValueDamagePerClick, increaseValueAutoDamage);
-            buttonFifthUpgrade.button.Text = game.GameUpgrades[4].Price + "$";
-            buttonFifthUpgrade.button.Location = new Point(350, 560);
+            var buttonFifthUpgrade = GetButtonUpgrade(game, 4, increaseValueDamagePerClick, increaseValueAutoDamage, 560);
             buttonFifthUpgrade.button.Click += (s, e) =>
                 TryUpgrade(game, money, damageClick, autoDamage, countFifthUpgrade, buttonFifthUpgrade, 4, 1.6, 1.02);
             Controls.Add(buttonFifthUpgrade.button);
@@ -288,6 +228,39 @@ namespace Universe_invaders
                 }
             };
             timer.Start();
+        }
+
+        private static UpgradeButton GetButtonUpgrade(Game game, int index, Label increaseValueDamagePerClick, Label increaseValueAutoDamage, int y)
+        {
+            var buttonUpgrade = new UpgradeButton(game.GameUpgrades[index], increaseValueDamagePerClick, increaseValueAutoDamage);
+            buttonUpgrade.button.Text = game.GameUpgrades[index].Price + "$";
+            buttonUpgrade.button.Location = new Point(350, y);
+
+            return buttonUpgrade;
+        }
+
+        private static Label GetCountUpgrade(Game game, int index, int y)
+        {
+            var countUpgrade = new Label();
+            countUpgrade.Text = game.GameUpgrades[index].CountUpgrades + "x";
+            countUpgrade.Size = new Size(65, 30);
+            countUpgrade.Location = new Point(285, y);
+            countUpgrade.Font = new Font("PlayMeGames", 22, FontStyle.Italic);
+            countUpgrade.ForeColor = Color.Teal;
+
+            return countUpgrade;
+        }
+
+        private static Label GetTitleUpgrade(string text, int width, int height, int x, int y, int emSize)
+        {
+            var titleUpgrade = new Label(); 
+            titleUpgrade.Text = text;
+            titleUpgrade.Size = new Size(width, height);
+            titleUpgrade.Location = new Point(x, y);
+            titleUpgrade.Font = new Font("PlayMeGames", emSize, FontStyle.Italic);
+            titleUpgrade.ForeColor = Color.Teal;
+
+            return titleUpgrade;
         }
 
         private static PictureBox GetUpgradePicture(string path, int x, int y)
