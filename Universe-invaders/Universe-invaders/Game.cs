@@ -34,24 +34,11 @@ namespace Universe_invaders
 
         public static string GetNextMonsterName()
         {
-            string nextMonsterName = null;
+            var listMonsters = new List<string> {"OrangeMonster", "BlueMonster", "PurpleMonster"};
             var rnd = new Random();
-            var numberOfNextMonster = rnd.Next() % 3;
+            var numberOfNextMonster = rnd.Next() % listMonsters.Count;
 
-            switch (numberOfNextMonster)
-            {
-                case 0:
-                    nextMonsterName = "OrangeMonster";
-                    break;
-                case 1:
-                    nextMonsterName = "BlueMonster";
-                    break;
-                case 2:
-                    nextMonsterName = "PurpleMonster";
-                    break;
-            }
-
-            return nextMonsterName;
+            return listMonsters[numberOfNextMonster];
         }
     }
 }
