@@ -2,7 +2,11 @@
 
 ![Logo](/images/logo.png)
 
+Main menu:
+
 ![Menu](/images/menu.png)
+
+Gameplay:
 
 ![Gameplay](/images/gameplay1.png)
 
